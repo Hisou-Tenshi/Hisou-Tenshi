@@ -50,7 +50,7 @@ h4 {color: #FFC0CB !important;}</style>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path d="m.427 1.927 1.215 1.215a8.002 8.002 0 1 1-1.6 5.685.75.75 0 1 1 1.493-.154 6.5 6.5 0 1 0 1.18-4.458l1.358 1.358A.25.25 0 0 1 3.896 6H.25A.25.25 0 0 1 0 5.75V2.104a.25.25 0 0 1 .427-.177ZM7.75 4a.75.75 0 0 1 .75.75v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5A.75.75 0 0 1 7.75 4Z"/>
                             </svg>
-                            700 hours played
+                            708 hours played
                         </div>
                     </section>
                 </div>
@@ -154,7 +154,7 @@ h4 {color: #FFC0CB !important;}</style>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                             <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/>
                                         </svg>
-                                        8 hours played
+                                        15 hours played
                                     </div>
                                 </div>
                                 <div class="infos">
@@ -162,7 +162,7 @@ h4 {color: #FFC0CB !important;}</style>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                             <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"/>
                                         </svg>
-                                        Last played on 2 Sept 2026
+                                        Last played on 3 Sept 2026
                                     </div>
                                 </div>
                                 <div class="achievements">
@@ -171,32 +171,32 @@ h4 {color: #FFC0CB !important;}</style>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                                 <path d="M3.217 6.962A3.75 3.75 0 0 1 0 3.25v-.5C0 1.784.784 1 1.75 1h1.356c.228-.585.796-1 1.462-1h6.864c.647 0 1.227.397 1.462 1h1.356c.966 0 1.75.784 1.75 1.75v.5a3.75 3.75 0 0 1-3.217 3.712 5.014 5.014 0 0 1-2.771 3.117l.144 1.446c.005.05.03.12.114.204.086.087.217.17.373.227.283.103.618.274.89.568.285.31.467.723.467 1.226v.75h1.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H4v-.75c0-.503.182-.916.468-1.226.27-.294.606-.465.889-.568.139-.048.266-.126.373-.227.084-.085.109-.153.114-.204l.144-1.446a5.015 5.015 0 0 1-2.77-3.117ZM4.5 1.568V5.5a3.5 3.5 0 1 0 7 0V1.568a.068.068 0 0 0-.068-.068H4.568a.068.068 0 0 0-.068.068Zm2.957 8.902-.12 1.204c-.093.925-.858 1.47-1.467 1.691a.766.766 0 0 0-.3.176c-.037.04-.07.093-.07.21v.75h5v-.75c0-.117-.033-.17-.07-.21a.766.766 0 0 0-.3-.176c-.609-.221-1.374-.766-1.466-1.69l-.12-1.204a5.064 5.064 0 0 1-1.087 0ZM13 2.5v2.872a2.25 2.25 0 0 0 1.5-2.122v-.5a.25.25 0 0 0-.25-.25H13Zm-10 0H1.75a.25.25 0 0 0-.25.25v.5c0 .98.626 1.813 1.5 2.122Z"/>
                                             </svg>
-                                            9 / 164 achievements unlocked
+                                            17 / 164 achievements unlocked
                                         </div>
                                     </div>
                                     <div class="achievement">
-                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAABQYDBAcAAv/EACoQAAIBAwQBAwIHAAAAAAAAAAECAwQFEQAGEiExEyJRQWEHIzJxgZGh/8QAFwEBAQEBAAAAAAAAAAAAAAAAAwQCBf/EAB8RAAICAgEFAAAAAAAAAAAAAAECAAMEETESIVFh4f/aAAwDAQACEQMRAD8AydWIUCOPAx1n2jXQ009TMRHzJUdiNc+dWqyhe30lK9yqkhaZOSRQoZZCAcHOOgc/QnRCz7pthRqS3W+vm4EBy3EMx8fpz2dKbRBBBnizbZuFxkdYKb8xccmkPY0ZqNmyUdRSmsmVvVBAEfQyPvpqsMspif0KaVhVxlFRkKn+j3qK4S8Up4qmVgIO0RI8kfOT/HjWRaG4MQBTxJt+VG2dn3GzCstclzeSeWpb1mGY4+IU4AAXHjrHeBojuHcu19q3CACrEfrUwmp6aOI5YMfbjiMfI71ju5K273VqWe60CQRRkrGWiMYbPZXodjrxoNdIb3PR0FTc7g7UqgxUp9uAinHFfrgfTOuSMbrRVsbe+ffjXyRjH2oBMdL9+MDvKyUdJU8lPRbicf5peh3zXXGsQ1EcSOVK85SGIHke35znvS5JQKzYlaWYkdkknOrdttiCVeMKxoDlicDr7fP7aooxaqDtBHqx1r7rP//Z" alt="" />
+                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABQYHBAj/xAAqEAACAQMDAwMDBQAAAAAAAAABAgMEBREABhITITFBYZEUIoEjMlGhsf/EABkBAAIDAQAAAAAAAAAAAAAAAAQFAAECA//EACARAAICAgEFAQAAAAAAAAAAAAECABEDITEEBRJCsdH/2gAMAwEAAhEDEQA/AJFfNn3Kz2+mra2Dp09SWWJsg8uPn/dA1onJxjTFXSXaqiEZu8FXEgOEnQjiD5xjIGidqsck9nirecBIJDoHGVIbGBn9wPt49daXOravcgS9iB9s7TmvtY9NG4jkETyIGBPMqpPEe5xo1S240+wqwFcM0wX8jVI2pdoDV2RYqCnha3Y6kiDDyKx7k/z5xrZfNqie5mz0pX6eW4Fi4P2rHjlk+2M679LnbHkyF+PAkfI17egRXcj1P5OZ7XcUh63Ulilg4K0kbkK7qGGVjYglWx6j01X9n043NPR04qVNZVQNPHTO0eIo0AXuVxg444JALZzjSJDbLc0Sh6SLOO5x3OtTU6hD0CEbAAbHgAYA+BjSwsCbAggVlFXYleXbV7sk09QLXLMzg/qKQ/ftg4/H96A1O4LzSVLtV0yRcl4OJKdo1PbHke2dINDfrnbWKJV1EZHhRK4B+DozHve5FOL1dQR65fmPg6LBdeNy1Zarif/Z" alt="" />
                                         <div>
                                             <div class="name">
-                                                <div>First Love</div>
-                                                <div class="unlocked">2 Sept 2026</div>
+                                                <div>Viva Horizon!</div>
+                                                <div class="unlocked">3 Sept 2026</div>
                                             </div>
-                                            <div class="description">Purchase your first car from the Autoshow</div>
+                                            <div class="description">Unlock your first Horizon Finale Event</div>
                                         </div>
                                     </div>
                                     <div class="achievement">
-                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAwYFBwECBP/EACwQAAICAQMDAQYHAAAAAAAAAAECAwQRAAUhBhIxQQcTUWGRoSIjQnGBscH/xAAXAQADAQAAAAAAAAAAAAAAAAABBAUD/8QAJBEAAQIEBgMBAAAAAAAAAAAAAwECAAQREgUhMUFxsRMUYTL/2gAMAwEAAhEDEQA/ACLVPw0UVe1SzYCjkk+muu3uW31aM9oyZWEZKlSh+PqBpF6w60o2Nkmho2XWaRRlo0VhEC2B3A5zn5c6tHxJg1tYly/NuV2hCXwshG+Qi2t1z1XhN+oZJ9wowDCzxyS8AKpzyfHOtKFmW3ELMM0PuzkdoB4I8g6pm6sssJnt3r8NdI1B7VKDIPBP1++pfoXZ9yqrJvlPcQKNQF7MfvGBkVSMkD9XkcaSKeZLo+1PlF7h4AZQX6Gr+Vp1DJ7U+sa1U1qNeGG4zN76WSUluzBwOAeT51VzXWsCzYeVA8g5CgLk+OB6jAH21Lbr0jvVyRJHsRTvjtJkftwNZ2voncayv32Y0duPy5D4+mo7DhElGuiwcE1MEq5kK8U8b7kXlUlB4Rz3AfwdN289Q3INuk2um4SjPjuU/hABAz8ue0Z/bQpegLLyEpchjU+hUsf81L1ujyaiQXrQmVPBRMH+9H3RJndGSYbMKtLeo//Z" alt="" />
+                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGQABAQEAAwAAAAAAAAAAAAAABgUDAgQH/8QAKhAAAgIBAwMCBgMBAAAAAAAAAQIDBBEABSEGEkExURMUIiNhcRcyQlL/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABwRAAIBBQEAAAAAAAAAAAAAAAECAAMRITFBUf/aAAwDAQACEQMRAD8A95kgqbbTlsXXRIYVLux8DUra91G47hWvvUEW3IA9NJUHxJJcN9Sj9BgMc8/rRTc7M/U2599yY19pVBI0KzgcZxggf64zzwONYbpum3b5VqFJpqhoER146yu7BQMg5AIHIA5/PqDo6rOcAStEHTE++U6PU+4UpWZYoStiKywOBYUFVKg4/qfpOR/yR76jWNxq0ZoaJBp1NwDx9yRqOyzGMMjL6KGCHgec48aP3eoV3O7K9eZYdir/AGY5JVYJ3LlJokwM8B0yccH98AOo+q++GD5+SGeYTx2XWtITiVBg5Pp9QVSSPPdxoCjHFoi29kW/1tFs9G01AmacrkjnsLeOD6DQ/wDkDfJ2X5y0rRyHGRlRGfHGcaPyvdtKUYxQxMMFUXx+zritOMKqyu0ij0BPGryzHslv5LM/U8j5iNmxZBz9uI4XJ8+2s6D2rtmNbbrBWJGY15OPyddWBAGCQoBn20vj6StwbQu52WjjT4nYEz3HP59tDUZV32IgZtT/2Q==" alt="" />
                                         <div>
                                             <div class="name">
-                                                <div>The Rookie</div>
-                                                <div class="unlocked">31 Aug 2026</div>
+                                                <div>A Forza Edition to my Collection</div>
+                                                <div class="unlocked">3 Sept 2026</div>
                                             </div>
-                                            <div class="description">Complete the Rookie Qualifier Event</div>
+                                            <div class="description">Earn a Forza Edition car from a Wheelspin or Super Wheelspin</div>
                                         </div>
                                     </div>
                                     <div class="achievement">
                                         <div>
-                                            <div class="description ellipsis">+7 others...</div>
+                                            <div class="description ellipsis">+15 others...</div>
                                         </div>
                                     </div>
                                 </div>
