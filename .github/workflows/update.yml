@@ -1,23 +1,103 @@
+# =============================================================================
+#  Metrics update — 每天生成 github-metrics/*.svg 并提交回本仓库
+# =============================================================================
+#
+#  ┌─────────────────────────────────────────────────────────────────────────┐
+#  │ 为什么会用 gh-metrics/metrics 而不是 lowlighter/metrics（必读）          │
+#  └─────────────────────────────────────────────────────────────────────────┘
+#
+# 上游 lowlighter/metrics 自 2023-09-12 的 v3.34 之后**再也没有发布过 tag**
+#  （仓库最后一次有提交是 2026-05，但没有任何 release）。
+#  所以 `lowlighter/metrics@latest` 实际解析到的永远是 2023 年那份代码。
+#
+#  2025-10 GitHub 从 PushEvent 的 payload 里移除了 `commits` 字段
+#  （现在只剩 before / head / size / push_id），上游那份旧代码里
+#  `flatMap(({payload}) => payload.commits)` 直接炸掉，症状是：
+#
+#    · plugin_activity  →  "Unexpected error"（占位图 480x60）
+#      upstream/source/plugins/activity/index.mjs  的 PushEvent case
+#    · plugin_habits    →  同样一句 "Unexpected error"（占位图 480x60）
+#      upstream/source/plugins/habits/index.mjs:50 也读 payload.commits
+#
+#  两个坑的补充说明：
+#    1. 解析发生在 filter 之前，所以改 plugin_activity_filter 救不回来，
+#       只要 events 流里出现任意一个 PushEvent 就整块挂掉。
+#    2. 报错信息之所以只有干巴巴一句 "Unexpected error"，是因为上游的
+#       format.error() 把真正的 TypeError 塞进了 .error.instance 里，
+#       而模板只打印 .error.message。
+#
+#  修复 PR：https://github.com/lowlighter/metrics/pull/1760 （EndBug）
+#    改为用 rest.repos.compareCommitsWithBasehead({basehead: before...head})
+#    去 API 取 commit，不再依赖 payload.commits。但该 PR 至今未被上游合并。
+#
+#  gh-metrics/metrics 是社区接手维护的分叉，已 cherry-pick 上述修复并持续更新：
+#    · master 最新提交  2026-09-07  b594ca3c0c5f4312f9674afb91ca8d7619f9c77d
+#    · 61 个用到的 action 输入全部存在，composite action，可直接平替
+#    · 该分叉无 release tag，只能引用 @master；如需锁定版本，把下面的
+#      `@master` 换成上面那串 commit SHA
+#
+#  ┌─────────────────────────────────────────────────────────────────────────┐
+#  │ 如果这个分叉哪天也挂了 —— 自建步骤（详见根目录 SELF-HOSTING.md）          │
+#  └─────────────────────────────────────────────────────────────────────────┘
+#
+#  1. fork https://github.com/gh-metrics/metrics 到你自己的账号
+#  2. 把本文件所有 `uses: gh-metrics/metrics@master` 换成 `uses: <你的账号>/metrics@master`
+#  3. 出问题时优先看 source/plugins/*/index.mjs —— 这里 90% 的故障都是
+#     GitHub API 改了响应结构导致某个字段变 undefined
+#  4. 本地复现排错：把 upstream 源码 clone 到本地，用 tests/ 下的 mock 跑
+#  5. 最后手段：放弃 action，直接 docker run 或 node 跑源码后提交 SVG
+#
+#  ┌─────────────────────────────────────────────────────────────────────────┐
+#  │ 迁移前的几个坑（已修掉，别再踩回去）                                     │
+#  └─────────────────────────────────────────────────────────────────────────┘
+#
+#  · 原来同时存在 update.yml(07:21 UTC) 和 update2.yml(19:21 UTC) 两个内容
+#    完全相同的 workflow，各跑 18 个 step = 每天 36 次调用，且会并发 push 同一分支。
+#    已合并为单文件 + concurrency 互斥。
+#
+#  · README 里的 top-langs 卡片用的是 github-readme-stats.vercel.app 公共实例，
+#    实测返回 HTTP 503。该项目已被作者归档（README 明确写了请改用
+#    stats-organization/github-stats-extended），公共实例限额耗尽。
+#    已迁至 github-stats-extended.vercel.app。
+#
+#  · 账号已由 Shameimaru-Ayaya 改名为 Hisou-Tenshi，卡片里的 username 同步更新。
+#
+#  · config_timezone 原来混用 Asia/Tokyo 和 Europe/Paris，已统一为 Asia/Tokyo。
+#
+# =============================================================================
+
 name: Metrics update UTC 07:21
+
 on:
-  # Schedule daily updates
-  schedule: [{cron: "21 7 * * *"}]
-  # (optional) Run workflow manually
+  # 每天 07:21 UTC = 16:21 JST 跑一次
+  # （cron 只认 UTC；想恢复一天两次就把这条加上 19:21 的那半句）
+  schedule:
+    - cron: "21 7 * * *"
+  # 允许手动触发：改完配置后先来这里手动跑一次验证
   workflow_dispatch:
-  # (optional) Run workflow when pushing on master/main
-  push: {branches: ["master", "main"]}
+  # 手动 push 到 main 时也跑一次。
+  # 注意：action 自己产生的提交带 "[Skip GitHub Action]" 标记，不会造成循环触发。
+  push:
+    branches: ["main", "master"]
+
+# 防止 cron 与手动触发/推送同时跑，两个 job 抢着 push 同一分支会冲突
+concurrency:
+  group: metrics-update
+  cancel-in-progress: false
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: production
     permissions:
-      contents: write
+      contents: write # 生成的 SVG 需要提交回仓库
     steps:
+      # -----------------------------------------------------------------------
       # 基础信息（顺带了几个小插件）
+      # -----------------------------------------------------------------------
       - name: base
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/base.svg
           # Your GitHub token
@@ -31,14 +111,6 @@ jobs:
           plugin_lines: yes
           # 此插件为文档中的 🙋 Introduction
           plugin_introduction: yes
-          # 此插件为文档中的 🎫 Gists
-          # plugin_gists: yes
-          # 此插件为文档中的 💫 Star lists
-          # plugin_starlists: yes
-          # plugin_starlists_limit_repositories: 2
-          # plugin_starlists_languages: yes
-          # plugin_starlists_limit_languages: 8
-          # plugin_starlists_only: Awesome
           extras_css: |
                 title {
                   color: #E25577;
@@ -62,9 +134,14 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
+      # Youtube Music - Recently listed
+      # 若显示 "No music recently listened"，多半是 YOUTUBE_MUSIC_TOKENS 过期，
+      # 该 token 需要定期刷新，与代码无关。
+      # -----------------------------------------------------------------------
       - name: Youtube Music - Recently listed
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/youtube.music.svg
           token: NOT_NEEDED
@@ -89,9 +166,12 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
+      # Profile and detailed game history
+      # -----------------------------------------------------------------------
       - name: Profile and detailed game history
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/steam.full.svg
           token: NOT_NEEDED
@@ -116,10 +196,12 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 📅 Isometric commit calendar
+      # -----------------------------------------------------------------------
       - name: Full-year calendar
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/isocalendar.fullyear.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -153,9 +235,11 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
 
+      # -----------------------------------------------------------------------
       # 📆 Commit calendar
+      # -----------------------------------------------------------------------
       - name: Full history calendar
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/calendar.full.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -186,9 +270,16 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
 
+      # -----------------------------------------------------------------------
       # 💡 Coding habits and activity
+      #
+      # ⚠️ 这张图在 2025-10-16 之后就再没正常渲染过，直到迁移到分叉才修好。
+      #    原因见文件头：habits 插件读 PushEvent.payload.commits，该字段已被
+      #    GitHub 移除。自检方法：看生成的 SVG 高度，正常是 480x280 左右，
+      #    如果变成 480x60 且只有 "Unexpected error"，就是又坏了。
+      # -----------------------------------------------------------------------
       - name: Recent activity charts
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/habits.charts.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -196,7 +287,11 @@ jobs:
           plugin_habits: yes
           plugin_habits_facts: no
           plugin_habits_charts: yes
-          config_timezone: Europe/Paris
+          # 默认就是 graph，这里显式写出来，避免以后默认值变动
+          plugin_habits_charts_type: graph
+          # 统计窗口，单位天，上限 30
+          plugin_habits_days: 14
+          config_timezone: Asia/Tokyo
           extras_css: |
                 title {
                   color: #E25577;
@@ -221,9 +316,16 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
 
+      # -----------------------------------------------------------------------
       # 🈷️ Languages activity
+      #
+      # ⚠️ 已知数据质量问题：标题会写 "11 Languages"，但列表里通常只有 4-5 种。
+      #    因为 "11" 来自各仓库 languages.edges 的去重并集（含 0 字节的语言），
+      #    而 indepth 分析器统计出的 0 行/0 字节语言会被静默丢弃。
+      #    这是上游行为，不是本仓库配置错误。
+      # -----------------------------------------------------------------------
       - name: Indepth analysis
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/languages.indepth.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -232,9 +334,11 @@ jobs:
           plugin_languages_ignored: >-
             jupyter notebook, dockerfile, makefile
           plugin_languages_indepth: yes
-          plugin_languages_details: lines, bytes-size
-          # plugin_languages_limit: 4
-          plugin_languages_analysis_timeout: 15
+          plugin_languages_details: lines, bytes-size, percentage
+          plugin_languages_limit: 8
+          # indepth 会 clone 仓库并用 linguist 逐文件分析，容易超时；
+          # 之前是 15，语言统计不完整，放宽到 30
+          plugin_languages_analysis_timeout: 30
           extras_css: |
                 title {
                   color: #E25577;
@@ -259,9 +363,11 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
 
+      # -----------------------------------------------------------------------
       # ✨ Stargazers
+      # -----------------------------------------------------------------------
       - name: Using chartist charts
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/stargazers.chartist.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -291,10 +397,12 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 🌟 Recently starred repositories
+      # -----------------------------------------------------------------------
       - name: Recently starred
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/stars.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -325,9 +433,11 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
 
+      # -----------------------------------------------------------------------
       # 🎟️ Follow-up of issues and pull requests
+      # -----------------------------------------------------------------------
       - name: Indepth analysis
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/followup.indepth.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -357,10 +467,12 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 🎭 Comment reactions
+      # -----------------------------------------------------------------------
       - name: Comment reactions
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/reactions.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -391,10 +503,12 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 🧑‍🤝‍🧑 People
+      # -----------------------------------------------------------------------
       - name: Followers
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/people.followers.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -426,10 +540,12 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
-      # 📓 Featured repositories
+
+      # -----------------------------------------------------------------------
+      # 📓 Featured repositories（pinned 是数量，不是布尔值）
+      # -----------------------------------------------------------------------
       - name: Pinned repositories
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/repositories.pinned.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -459,10 +575,13 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 💬 Discussions
+      # 只有在仓库开启了 Discussions 且有讨论时才有内容
+      # -----------------------------------------------------------------------
       - name: GitHub Discussions
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/discussions.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -493,9 +612,16 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
 
+      # -----------------------------------------------------------------------
       # 🏆 Achievements
+      #
+      # ⚠️ achievements.compact.svg 自 2025-09-30 起内容就没再变过，一直是
+      #    "Unexpected error"。已知原因是其中的 Projects (classic) 相关成就
+      #    依赖已被 GitHub 下线的旧 Projects API（上游 issue #1479 / #1763）。
+      #    这不是本仓库能修的，属于上游停更遗留问题。
+      # -----------------------------------------------------------------------
       - name: Compact display
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/achievements.compact.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -529,18 +655,28 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 📰 Recent activity
+      #
+      # ⚠️ 与 habits 同一个根因（PushEvent.payload.commits 被移除）。
+      #    2026-02-26 之后一直被冻结在 "Unexpected error"。
+      #    迁移到分叉后，PushEvent 的 commit 改为调用
+      #    repos.compareCommitsWithBasehead 获取。
+      #    自检：正常时 SVG 高度 200+，坏掉时是 480x60。
+      # -----------------------------------------------------------------------
       - name: Recent activity
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/activity.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_activity: yes
           plugin_activity_limit: 5
+          # 0 = 不限制事件时间范围
           plugin_activity_days: 0
           plugin_activity_filter: issue, pr, release, fork, review, ref/create
+          config_timezone: Asia/Tokyo
           extras_css: |
                 title {
                   color: #E25577;
@@ -564,10 +700,14 @@ jobs:
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
-          
+
+      # -----------------------------------------------------------------------
       # 🗨️ Stack Overflow
+      # 注意 plugin_stackoverflow_user: 1 是官方示例里的占位数值，需要换成真实
+      # 的 Stack Overflow 用户 ID，否则拉到的不是本人的数据。
+      # -----------------------------------------------------------------------
       - name: Top answers from stackoverflow
-        uses: lowlighter/metrics@latest
+        uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/stackoverflow.svg
           token: NOT_NEEDED

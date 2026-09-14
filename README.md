@@ -1,5 +1,5 @@
 # [Ciallo～(∠・ω< )⌒☆](https://ciallo.cc/)
-###### Preference：[简体中文](https://www.gov.cn/)｜[繁體中文](http://big5.www.gov.cn/gate/big5/www.gov.cn/)｜[日本語](https://www.kunaicho.go.jp/)｜[English](https://www.gov.uk/)<p align="right">☛<a href="https://shameimaru-ayaya.github.io/">More Info</a></p>
+###### Preference：[简体中文](https://www.gov.cn/)｜[繁體中文](http://big5.www.gov.cn/gate/big5/www.gov.cn/)｜[日本語](https://www.kunaicho.go.jp/)｜[English](https://www.gov.uk/)<p align="right">☛<a href="https://hisou-tenshi.github.io/">More Info</a></p>
 
 <a href="https://github.com/lowlighter/metrics"><img width="450rem" src="./github-metrics/base.svg"></a>
 <a href='https://www.yuzu-soft.com/'><img width="350" alt="GIF" src="./colors/ciallo.gif" align="right"></a>
@@ -10,8 +10,27 @@
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/isocalendar.fullyear.svg" ></a>
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/calendar.full.svg" align="right"></a><br><br><br>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/habits.charts.svg"></a>
-<a href="https://github.com/anuraghazra/github-readme-stats"><img width="400rem" src="https://github-readme-stats.vercel.app/api/top-langs?username=Shameimaru-Ayaya&layout=compact&title_color=39c5bb&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/habits.charts.svg" align="left"></a>
+<!--
+  下面这张是 metrics 原生生成的语言统计（走 plugin_languages + indepth）。
+  它一直被 workflow 每天生成，但此前从未在 README 里展示过；而 base.svg 里并没有开
+  plugin_languages，所以整份 README 原本完全没有语言统计。放在这里与 habits 图并排。
+  已知瑕疵：标题会写 "11 Languages" 但只列出 4-5 种（详见 SELF-HOSTING.md §3.4）。
+-->
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/languages.indepth.svg" align="right"></a>
+<br clear="all">
+<br>
+
+<!--
+  top-langs 卡片：原用 github-readme-stats.vercel.app 公共实例，该实例已返回 HTTP 503
+  且项目被作者归档（官方请改用 stats-organization/github-stats-extended），故整体迁到：
+    https://github-stats-extended.vercel.app/api/top-langs
+  迁移前后参数完全兼容。若该实例以后也不稳定，见 SELF-HOSTING.md 里的自建方案。
+  username 已随账号改名由 Shameimaru-Ayaya 更新为 Hisou-Tenshi。
+  注：这张与上面的 languages.indepth 数据来源不同（外部服务统计的是各仓库语言字节占比，
+  会含 README/SVG 等文件），两者并存是有意的，不是重复表达。
+-->
+<a href="https://github.com/stats-organization/github-stats-extended"><img width="400rem" src="https://github-stats-extended.vercel.app/api/top-langs?username=Hisou-Tenshi&layout=compact&title_color=39c5bb&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500"></a>
 
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/followup.indepth.svg"></a>
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/activity.svg" align="right"></a>
