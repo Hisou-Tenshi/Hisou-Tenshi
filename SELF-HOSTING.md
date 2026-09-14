@@ -159,18 +159,50 @@ commits.flatMap(commit => commit.payload.commits.filter(...))   // ← payload.c
   `languages.edges` 的去重并集（包含 0 字节的语言），而 indepth 分析器统计出的
   0 行/0 字节语言会被静默丢弃。属于上游行为，不是配置错误。
 
-### 3.5 两个「生成了但没展示」的文件
+### 3.5 「生成了但没展示」的文件
 
-workflow 每天会生成 17 张图，其中这两张**没有被 README 引用**（历史上也从未引用过）。
-它们不是坏了才藏起来的，而是本来就没放上去：
+workflow 每天会生成 19 张图。早年有 3 张没有被 README 引用（历史上也从未引用过），
+2026-09 已把其中 2 张修好并加进 README，现在只剩 1 张：
 
-| 文件 | 状态 | 为什么先别放上去 |
+| 文件 | 状态 | 处理 |
 |---|---|---|
-| `achievements.compact.svg` | ❌ 内容是 `Unexpected error` | 展示出来只会多一张裂图 |
-| `discussions.svg` | ⚪ 内容是「No discussions」 | 仓库没开 Discussions 或没有讨论 |
+| `discussions.svg` | ⚪ 内容是「No discussions」 | 仓库没开 Discussions 或没有讨论，暂无展示价值 |
+| ~~`languages.indepth.svg`~~ | ✅ 已加进 README | 与 habits 图并排 |
+| ~~`achievements.compact.svg`~~ | ⚠️ 已加进 README，但**仍是错误占位图** | 见下 |
 
-想清理的话有两个选择：把它们从 workflow 里删掉（省两次 API 调用），
-或者修好后加进 README。加之前**先跑 §1 的脚本确认内容正常**。
+**`achievements.compact.svg` 是唯一一个仍然坏掉的图**，而且它坏的原因
+和 habits/activity 完全不同，值得单独记一笔：
+
+插件执行开头会调用 `total()` 去拿「GitHub 全站用户数 / 仓库数」（用来算成就百分位）：
+
+```js
+// source/plugins/achievements/index.mjs
+for (const method of ["graphql", "browser"]) {   // 先 GraphQL 查询，失败则 puppeteer 抓页面
+  ...
+  if ((!total.users) || (!total.repositories))
+    throw new Error("Uncomplete setup")
+}
+if ((!total.users) || (!total.repositories))
+  return reject("Failed to initiate total for achievement plugin")   // ← 注意：reject 的是字符串
+```
+
+最后那行 `reject()` 传的是**字符串**而不是 `Error` 对象。而 `format.error()`
+只认 axios error 或带 `.message` 的对象，字符串落到兜底分支，于是界面只剩
+`Unexpected error`，真正的失败原因被完全吞掉——这就是为什么这张图看起来
+「没有信息量」：**它不是没报错，是报错被格式化成了一句废话。**
+
+要定位真正的失败点，去 Actions 日志搜这几行：
+
+```
+metrics/compute/plugins > achievements > setup using graphql
+metrics/compute/plugins > achievements > setup error > ...
+metrics/compute/plugins > achievements > filling total from github.com/search
+```
+
+已排除的可能：GitHub 的 REST search 接口本身是通的（`search/repositories` 与
+`search/users` 实测都返回 200），所以更可能是 GraphQL 侧或 puppeteer 侧的问题。
+
+**修复点在 fork 源码里，改本仓库的 workflow 配置解决不了。**
 
 ### 3.6 本地复现排错
 

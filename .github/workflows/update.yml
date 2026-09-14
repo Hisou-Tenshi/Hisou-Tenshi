@@ -317,6 +317,51 @@ jobs:
           retries_delay_output_action: 120
 
       # -----------------------------------------------------------------------
+      # 💡 Coding habits and activity — Mildly interesting facts
+      # 文档：https://github.com/gh-metrics/metrics/blob/master/source/plugins/habits/README.md
+      #
+      # 与上面 habits.charts 用同一个插件，但只输出文字结论（缩进风格、平均行长、
+      # 最常写代码的时段与星期），不画图，所以是独立的一张卡。
+      # 它同样依赖 events 流，所以历史上那张 charts 图挂掉时这张facts 也一样会挂——
+      # 现在两者都靠 gh-metrics 分叉里对 PushEvent 的修复才恢复。
+      # -----------------------------------------------------------------------
+      - name: Mildly interesting facts
+        uses: gh-metrics/metrics@master
+        with:
+          filename: github-metrics/habits.facts.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: no
+          # 统计窗口，单位天，上限 30；与 habits.charts 保持一致
+          plugin_habits_days: 14
+          config_timezone: Asia/Tokyo
+          extras_css: |
+                title {
+                  color: #E25577;
+                }
+                h1 {
+                  color: #E25577;
+                }
+                h2 {
+                  color: #39C5BB;
+                }
+                h3 {
+                  color: #FFA500;
+                }
+                svg {
+                 color: #FFC0CB;
+                }
+                footer {
+                 color: #FFC0CB;
+                }
+          retries: 3
+          retries_delay: 300
+          retries_output_action: 5
+          retries_delay_output_action: 120
+
+      # -----------------------------------------------------------------------
       # 🈷️ Languages activity
       #
       # ⚠️ 已知数据质量问题：标题会写 "11 Languages"，但列表里通常只有 4-5 种。
@@ -577,6 +622,60 @@ jobs:
           retries_delay_output_action: 120
 
       # -----------------------------------------------------------------------
+      # 📜 Repository licenses — Licenses overview
+      # 文档：https://github.com/gh-metrics/metrics/blob/master/source/plugins/licenses/README.md
+      #
+      # 这是本工作流里第一个（也是唯一一个）repository 模板的步骤。
+      # plugin_licenses 只在 repository 模板下有对应的 partial（classic 模板里没有
+      # licenses.ejs），所以必须写 template: repository。
+      #
+      # 「Licenses overview」对应的是 ratio 变体：
+      #   plugin_licenses_legal: no   关掉「Permissions / Limitations / Conditions」那张
+      #   plugin_licenses_ratio: yes  打开已使用许可证占比统计
+      # 两个都开的话会在一张图里同时渲染两块内容。
+      #
+      # ⚠️ 安全提示：上游文档明确写了这个插件 SHOULD NOT 用于 web 实例，因为
+      #    plugin_licenses_setup 会执行任意命令。我们只在自己的 Actions 里跑、
+      #    不使用 setup 参数，所以是安全的；但**不要**把它加到任何公开的
+      #    web 实例配置（settings.json）里。将来若启用 plugin_licenses_setup，
+      #    务必确保它只对可信仓库执行。
+      # -----------------------------------------------------------------------
+      - name: Licenses overview
+        uses: gh-metrics/metrics@master
+        with:
+          filename: github-metrics/licenses.overview.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          template: repository
+          repo: Hisou-Tenshi
+          plugin_licenses: yes
+          plugin_licenses_legal: no
+          plugin_licenses_ratio: yes
+          extras_css: |
+                title {
+                  color: #E25577;
+                }
+                h1 {
+                  color: #E25577;
+                }
+                h2 {
+                  color: #39C5BB;
+                }
+                h3 {
+                  color: #FFA500;
+                }
+                svg {
+                 color: #FFC0CB;
+                }
+                footer {
+                 color: #FFC0CB;
+                }
+          retries: 3
+          retries_delay: 300
+          retries_output_action: 5
+          retries_delay_output_action: 120
+
+      # -----------------------------------------------------------------------
       # 💬 Discussions
       # 只有在仓库开启了 Discussions 且有讨论时才有内容
       # -----------------------------------------------------------------------
@@ -615,10 +714,31 @@ jobs:
       # -----------------------------------------------------------------------
       # 🏆 Achievements
       #
-      # ⚠️ achievements.compact.svg 自 2025-09-30 起内容就没再变过，一直是
-      #    "Unexpected error"。已知原因是其中的 Projects (classic) 相关成就
-      #    依赖已被 GitHub 下线的旧 Projects API（上游 issue #1479 / #1763）。
-      #    这不是本仓库能修的，属于上游停更遗留问题。
+      # ⚠️ 这张卡目前仍然是坏的（自 2025-09-30 起一直显示 "Unexpected error"），
+      #    在迁移到 gh-metrics 分叉后**依然如此**——它和 habits/activity 那两个
+      #    PushEvent 问题无关，是另一个独立的故障。
+      #
+      #    根因（读分叉源码 source/plugins/achievements/index.mjs 得出）：
+      #      插件执行开头会先调用 total() 去初始化「GitHub 全站用户数 / 仓库数」，
+      #      用于算成就的百分位。total() 依次尝试：
+      #        1. graphql 查询 search(query:"created:>1970", type:USER/REPOSITORY)
+      #        2. puppeteer 抓 github.com/search 页面
+      #      两条路都失败时，最后一行是：
+      #          return reject("Failed to initiate total for achievement plugin")
+      #      注意 reject 的是一个**字符串**而不是 Error 对象。
+      #
+      #      而 format.error() 对字符串无能为力——它只认 axios error 或带 .message
+      #      的对象，最终落到兜底分支返回 {error:{message:"Unexpected error"}}，
+      #      模板打印 error.message 就只剩这四个字，真正的失败原因被完全吞掉了。
+      #
+      #    所以「Unexpected error」只是症状。要定位真正的失败点，需要在 Actions
+      #    日志里搜这几行（插件自己会打 debug 日志）：
+      #        metrics/compute/plugins > achievements > setup using graphql
+      #        metrics/compute/plugins > achievements > setup error > ...
+      #        metrics/compute/plugins > achievements > filling total from github.com/search
+      #    实测 GitHub 的 REST search 接口本身是通的（search/repositories 与
+      #    search/users 都返回 200），所以更可能是 GraphQL 侧或 puppeteer 侧的问题。
+      #    ⚠️ 修复点在 fork 的源码里，不是本工作流的配置，改配置解决不了。
       # -----------------------------------------------------------------------
       - name: Compact display
         uses: gh-metrics/metrics@master

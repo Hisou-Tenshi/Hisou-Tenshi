@@ -32,6 +32,15 @@
 -->
 <a href="https://github.com/stats-organization/github-stats-extended"><img width="400rem" src="https://github-stats-extended.vercel.app/api/top-langs?username=Hisou-Tenshi&layout=compact&title_color=39c5bb&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500"></a>
 
+<!--
+  habits.facts.svg：与上面的 habits.charts 同一个插件（💡 Coding habits and activity），
+  但只输出文字结论（缩进风格、平均行长、最常写代码的时段与星期），不画图。
+  两者共用 events 流，所以历史上 charts 图挂掉时这张也一样是坏的。
+-->
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/habits.facts.svg" align="left"></a>
+<br clear="all">
+<br>
+
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/followup.indepth.svg"></a>
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/activity.svg" align="right"></a>
 
@@ -43,6 +52,27 @@
 
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/stargazers.chartist.svg"></a>
 <a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/repositories.pinned.svg" align="right"></a>
+<br clear="all">
+
+<!--
+  📜 Repository licenses（Licenses overview 变体）。
+  这是唯一一张用 repository 模板出来的图（plugin_licenses 在 classic 模板下没有 partial）。
+  它统计的是本仓库自身及依赖的许可证情况，与其它卡的统计口径无关。
+-->
+<h3 align="center">📜 Licenses overview</h3>
+<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="./github-metrics/licenses.overview.svg"></a></p>
+
+<!--
+  🏆 Achievements（compact display）。
+  ⚠️ 这张卡目前仍然是坏的：生成的 SVG 内容是 "Unexpected error"，原因见
+  .github/workflows/update.yml 里 Compact display 那一步的注释——是上游
+  achievements 插件初始化「全站用户数/仓库数」失败后 reject 了一个字符串，
+  而格式化成错误信息时被吞掉了真实原因。与 habits/activity 的 PushEvent 问题无关，
+  改配置无法解决，需要在 fork 源码里修。
+  等修好之前，这里会显示一张错误占位图；如不想显示，把下面两行注释掉即可。
+-->
+<h3 align="center">🏆 Achievements</h3>
+<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="./github-metrics/achievements.compact.svg"></a></p>
 
 
 
