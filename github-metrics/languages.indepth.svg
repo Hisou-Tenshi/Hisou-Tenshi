@@ -33,16 +33,16 @@ footer {
             </section>
             <section class="column">
                 <h3 class="field">Most used languages</h3>
-                <small>estimation from 17.8mb of code in 2464 edited files across 815 commits</small>
+                <small>estimation from 18mb of code in 2496 edited files across 824 commits</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="460" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="379.29575271133905" height="8" fill="#3572A5"/>
-                    <rect mask="url(#languages-bar)" x="379.29575271133905" y="0" width="42.428229768573566" height="8" fill="#e34c26"/>
-                    <rect mask="url(#languages-bar)" x="421.72398247991265" y="0" width="31.068155977925105" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="452.7921384578377" y="0" width="7.207861542162253" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="364.4948851178257" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="364.4948851178257" y="0" width="55.627983473397045" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="420.1228685912227" y="0" width="30.89508567209377" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="451.0179542633165" y="0" width="8.982045736683554" height="8" fill="#663399"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -56,7 +56,7 @@ footer {
                             <small>
                                 <div>97.2k lines</div>
                                 <div>3.81 MB</div>
-                                <div>82.46%</div>
+                                <div>79.24%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -67,9 +67,9 @@ footer {
                                 HTML
                             </div>
                             <small>
-                                <div>4.66k lines</div>
-                                <div>426 kB</div>
-                                <div>9.22%</div>
+                                <div>4.80k lines</div>
+                                <div>581 kB</div>
+                                <div>12.09%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -80,9 +80,9 @@ footer {
                                 JavaScript
                             </div>
                             <small>
-                                <div>9.20k lines</div>
-                                <div>312 kB</div>
-                                <div>6.75%</div>
+                                <div>9.40k lines</div>
+                                <div>323 kB</div>
+                                <div>6.72%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -93,9 +93,9 @@ footer {
                                 CSS
                             </div>
                             <small>
-                                <div>2.97k lines</div>
-                                <div>72.4 kB</div>
-                                <div>1.57%</div>
+                                <div>3.43k lines</div>
+                                <div>93.9 kB</div>
+                                <div>1.95%</div>
                             </small>
                         </div>
                     </section>
