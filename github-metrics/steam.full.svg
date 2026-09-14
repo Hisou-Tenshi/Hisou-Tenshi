@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="495" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="526" class="">
     <defs>
         <style/>
     </defs>
@@ -50,7 +50,7 @@ h4 {color: #FFC0CB !important;}</style>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path d="m.427 1.927 1.215 1.215a8.002 8.002 0 1 1-1.6 5.685.75.75 0 1 1 1.493-.154 6.5 6.5 0 1 0 1.18-4.458l1.358 1.358A.25.25 0 0 1 3.896 6H.25A.25.25 0 0 1 0 5.75V2.104a.25.25 0 0 1 .427-.177ZM7.75 4a.75.75 0 0 1 .75.75v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5A.75.75 0 0 1 7.75 4Z"/>
                             </svg>
-                            736 hours played
+                            739 hours played
                         </div>
                     </section>
                 </div>
@@ -138,15 +138,15 @@ h4 {color: #FFC0CB !important;}</style>
                     </h2>
                     <div class="medias largeable-flex-wrap">
                         <div class="media largeable-width-half">
-                            <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAEHBAUGAgP/xAAtEAABBAEDAgUDBAMAAAAAAAABAAIDBAUGESESMRMiQWFxBxdRIzJCUnKBg//EABsBAQACAwEBAAAAAAAAAAAAAAABAwIEBQYH/8QAKhEAAQMDAgQFBQAAAAAAAAAAAQACAwQRITFBBQYScRRRYaHhIyQzkbH/2gAMAwEAAhEDEQA/ANQoCkqFvL7EiIiIiIiIiIiIjv3EHn4TngN59lEjiwFwYXn+oWptZ+xSPVJgrb2D+QcAo7qiaqig/Jgdif4CmpNSUNPbNsHxrRG/gMOzgPyuTd9Th1kspOA9ASFpMmMXLaksX6d0SPcSS6XfpCx9tMAH9Oc/9FQ6R18LyFTxerleTFK1jdhn3wuiH1O370nH8dk+5p23NJ24+FqbeN07RqQT2WTskmO3gGTzNHo4+xXqbF6dgxUV+ds7WzPLGReJ5ht6/Cdb/NVeN4jc/XGBfX4+VtPufsNxTdv/AKXSaTz9rUPiTOqugqM7SO7OPqAub0vpPC5mub3g2G1N+lrS/lxHdWFDHFXrRw1oxHC3y9AG23urGBxyThdrhTK+VwmqJbs2tv7aL6MAc47vAjHJKqDX+qJspk3Q05Hx1IDsAHbbuHBVjarr5K7jW0cSREJiWzPI5Dfb8Li2fS+4eZMnWaT3Bad1EnUR0tWPHPGVP21Mwlu50v6LD0dYyL4pL8scctKoOvoezqMx7dIK+eI03kcllbGQsUjHBGfGEXTt1gnhoVoYjGVsPjoqNVoc1nmcXchxPdZheeNm7f48BBFgXWEPL3VGwTv0zb17nYKsoNMZXPZxlrPVnV6g8vSB0ksHYBZcuhL2SviXI2ooajD0si2IJYO23urDL3E8kkH0UdRI77jsQVIiaMLbZy/SgWkJcSbnOv68l4hijrVoq8DGsjjaGgNGw+V69EQcqxdoANFgp3I7EhQee6FEWSIiIoREREREREX/2Q==" alt="" />
+                            <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAABQYDBAcCCAH/xAArEAACAQMDAwMFAQADAAAAAAABAgMABBEFEiEGMUETIiMHFDJRYUIkUnH/xAAaAQACAwEBAAAAAAAAAAAAAAAEBQECBgMH/8QAKhEAAgEEAQIEBgMAAAAAAAAAAQIDAAQRMSEFEhMiQVEGFDJhkcGBofD/2gAMAwEAAhEDEQA/AN58DJzj9UH6lPwQbT3Y0ZH5ZA2j9GlrWL9btfSCFTGx91OrVSZAazN+6rCVOzqhTHaOeSf1RKwtShLA9x2qjbSLA5LqXBo1bHduOMZHFLeo3Ekkna4wB6Vtfh6xt7W18W3bvLbbnBwdYOsaqcdgM1N6GQDuFV3YKBxXYLEA5NLqckHHFUdc0t7yKFVkVSCeTXnvq3p6bRpTPNOkyyzMAFGDXo9HLsQpx/7Wadf9KzalDB6dzHGVlZuRRNtL4b74NA9RsjdW5XGXX6f5PP8AVPmp6oLyOMRpIhB8GhRkBLZJ5r6eBxxmrWnANJIMAlRnkU/vZDaxgxtj7e9YToFqnU52FzGXHGSGx275PvnVTWlr6Y3MQQw4B8UDsNTFve3BZZGGcDngc0R6hL+hDsYoc8nNJV/9VdLT4Bo826M+mzDHuI4zWcCSy5KL3GvTWmit1HfwD+q0xpPUijbGCRk11G+3ueD+6BxhtLt4b2aQzRXaBkQf5yM4pc606ui020tpPt5vkcjANVjQyHCjmrEoE7yfL70waBcGTUb0MX4z3P8Aak6iHwQ88bjiljT+trTqdPtrCxls5YFDPIx/KjOo363cEMaqVMf5Z81LIyHDjBrpC4mxKmj+qK/YOAd0gOKCXdxltkZbKnkqcU2eM570C0RQ97dBwpwfI/tR3E7q0ZCgnFK2vaDe9SwQw2uoNamBt53E8/yoPs4IkETwQs6AIX2fkR5rX+nIo/XmxHGfb2IFRS9Nh5HfdDgsSPb2plYdRW3BVhQvjxJKxbgnFGbOCJtOsw8UbhYlwCvbilD6oW9qNPsf+NCPkP8AgU7xptiRP+qgcVR1nTzqMUSZT2HPuGaAtZhDcCQ6BpdBIElDNqsqGlJp6JKvpfMMfGuKE9Ra3HocEUs0DyiRtvtNal1K0Rs7aJIUUo2CcCsS+qQH2djgHiZq6if5y4y/+4o69unjsXnj4I1+a2X9Z4H9pOlcpNLhmUlj2P8AavalqQu4o1iWRGU5PNDickEefJoYUwjUjfrTbskeCL05GQhQSQcZob9OuqF6l1jVLCJJoWs19zyNkNzjioOmOpYdZuZ7aK3eNrZeSx7+KM9L28eiXt5cenGfuRj2Lg9/NS0CqxEg5pRLK91EHtXGOfTf51ij+pO1gkbM7Hcf3SZ0x9QrfX9SvrSC1nha0yHZ24bnHFPF1cLdRouzGOfdzSL0Zq9lqes6lb2+npbyQE7nCgb+aLis4ymSKSSXkquqlsZz6VL1HBLBDFK8xZZGJABrO/q3ZPa6TpcrtuDynAHjjzWv63pz6lDEkTrGY2LZYcGl3SII5rm4iuVS4VBgCQbsH+ZrmFFu4YDinbZ6hZNCW8x3x96//9k=" alt="" />
                             <div class="about">
-                                <div class="name">Forza Horizon 5</div>
+                                <div class="name">Touhou Blooming Soul</div>
                                 <div class="infos">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                             <path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/>
                                         </svg>
-                                        Action, Adventure, Racing, Simulation, Sports
+                                        Action, Adventure, Indie, RPG, Early Access
                                     </div>
                                 </div>
                                 <div class="infos">
@@ -154,7 +154,7 @@ h4 {color: #FFC0CB !important;}</style>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                             <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/>
                                         </svg>
-                                        36 hours played
+                                        10 hours played
                                     </div>
                                 </div>
                                 <div class="infos">
@@ -162,7 +162,7 @@ h4 {color: #FFC0CB !important;}</style>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                             <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"/>
                                         </svg>
-                                        Last played on 13 Sept 2026
+                                        Last played on 14 Sept 2026
                                     </div>
                                 </div>
                                 <div class="achievements">
@@ -171,32 +171,32 @@ h4 {color: #FFC0CB !important;}</style>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                                 <path d="M3.217 6.962A3.75 3.75 0 0 1 0 3.25v-.5C0 1.784.784 1 1.75 1h1.356c.228-.585.796-1 1.462-1h6.864c.647 0 1.227.397 1.462 1h1.356c.966 0 1.75.784 1.75 1.75v.5a3.75 3.75 0 0 1-3.217 3.712 5.014 5.014 0 0 1-2.771 3.117l.144 1.446c.005.05.03.12.114.204.086.087.217.17.373.227.283.103.618.274.89.568.285.31.467.723.467 1.226v.75h1.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H4v-.75c0-.503.182-.916.468-1.226.27-.294.606-.465.889-.568.139-.048.266-.126.373-.227.084-.085.109-.153.114-.204l.144-1.446a5.015 5.015 0 0 1-2.77-3.117ZM4.5 1.568V5.5a3.5 3.5 0 1 0 7 0V1.568a.068.068 0 0 0-.068-.068H4.568a.068.068 0 0 0-.068.068Zm2.957 8.902-.12 1.204c-.093.925-.858 1.47-1.467 1.691a.766.766 0 0 0-.3.176c-.037.04-.07.093-.07.21v.75h5v-.75c0-.117-.033-.17-.07-.21a.766.766 0 0 0-.3-.176c-.609-.221-1.374-.766-1.466-1.69l-.12-1.204a5.064 5.064 0 0 1-1.087 0ZM13 2.5v2.872a2.25 2.25 0 0 0 1.5-2.122v-.5a.25.25 0 0 0-.25-.25H13Zm-10 0H1.75a.25.25 0 0 0-.25.25v.5c0 .98.626 1.813 1.5 2.122Z"/>
                                             </svg>
-                                            25 / 164 achievements unlocked
+                                            52 / 59 achievements unlocked
                                         </div>
                                     </div>
                                     <div class="achievement">
-                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABQYHBAP/xAApEAABAwIFAwQDAQAAAAAAAAABAgMEBREABhIhMQcTUSJBgZEVMmFS/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABwRAAIDAQEBAQAAAAAAAAAAAAECAAMhERITUf/aAAwDAQACEQMRAD8AbWepVSj0WO+uBrcS8WlqKQC56bgAXFj7k8bf3AqT1dqalQu0lUeSHt9a0hpQOxBTa587nY3x1ybTG+oCnotWltoVALamyGrFKEqNwpVwDqCiPOwPtg9mKg9OKEtSfx6Jst0nYPKsjydQ4+POOAzOAwOSp+dXVI0TJm/NFQagMMPVjt1dLa2+6wBZuyiklSRwo2uDvsb+MJ2YKilinMRXJcSbGXESA42kKIP6EL1m+savo/RLMkdipVGLIjUtcWVqLijCirfW6k/6SfSf4ScTDNdUgsVN2PBDqC2Qktvosri+6fY7+fbGFbVJPMgGpgP2OVAjLZlyYy5rqYncIdQ1cd4Dg/eJlmbPdZXU5LEKZHhx2nVIbLbQLmkGwuqxN/rDBKrVZjhlyRPpMdq1tYBJFjxY7k4mFfSZlUfkxlKLbqtatSQj1HmwBO18K27JtURrRumdRJDmVotKb7xqLa1uLqJcUHFlVxY7/qARtbkYUYs15xtXcU4+sKvr3v8AOM62HZS0obYjsb7BtBufk7nBmh5Wlz3BdaGmVJKgtarJXa/Avvxinvg2PPTk/9k=" alt="" />
+                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABAUCAwcG/8QAKhAAAQMDAwQBAwUAAAAAAAAAAQIDBAURIQAGEhMiMUEUMkJxB1FhgdH/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEBf/EACgRAAEDAQYFBQAAAAAAAAAAAAECAxEABAUGEkFhEyEikbExQoGhwf/aAAwDAQACEQMRAD8A0IBqrRlsx1dXmPCQSQfRt59aL2Ftd4yH5VSbW0hN2ktKSQVHBv8Aj8aJpEKHt+K+FvsNyg2pT0mUekyLEDiFqGO5SRex/fOBobaG7nqhImzJgEHbzAQliRLeQrktZwSU2FyCkcc2Nxe+NJar4yFTbQ6Zid9hXFu/D0pC3VbxGm5rulLQyoMRmm7D0BgaSVimxG2h8RoML4qUEtjsVb7QB93uwGc6Ere4U07bzlW4sxpC1qSwxLdDXPJse4i5Ke7jg+jbOkCN1K3HEpfwWZEeUah03QLpALYBWR7sQoCxz50jS5dSEHTnSO3fmsq3LQmB7fSPjX8pbW/1LdjVRluqbfivUtx4dGSqUSnp3HLk3wysDym+Da1xYkutqTV6g+WI7UR6nLdbgtOuhMZxxIupxKEp58+JCge4AE2KSQrU5MeDEp7nVhxnmE9/TeaDgKvR7gc5tf8AnU6FWkyKkjkwhaQkLKHgChlSSbdMWuPqOfIuLeDyirs6itIkffer2DETIQOKnmO3LbzNY/AfrdfrqabMkfOMh/ubcXzQCL3UmxwAL/SRfxrYajUY1DYYjQui5LZaS0AhPFKBk+sY5YAP+aprVEhUNqTVNusIYVIdHyCgElpJyEo9JQSDfx6HojVqEx6lDbccbSpKhfPlJ9gH+tPYbLwxncM1txnidq8VIZsreVsAEnUmPAmK/9k=" alt="" />
                                         <div>
                                             <div class="name">
-                                                <div>AWDyssey</div>
-                                                <div class="unlocked">13 Sept 2026</div>
+                                                <div>Grand Item Collection</div>
+                                                <div class="unlocked">14 Sept 2026</div>
                                             </div>
-                                            <div class="description">Build the Horizon Wilds Outpost</div>
+                                            <div class="description">You've collected over 100 items! Rinnosuke would be heartbroken if you open a shop now.</div>
                                         </div>
                                     </div>
                                     <div class="achievement">
-                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABQYBAwcE/8QAJxAAAgIBBAIBAwUAAAAAAAAAAQIDEQQABRIhMXFRBzJBExQiYaH/xAAXAQEBAQEAAAAAAAAAAAAAAAADAQAC/8QAHREAAgICAwEAAAAAAAAAAAAAAAECAxExEhMhYf/aAAwDAQACEQMRAD8ALbnvwEhjweLR0eUgFsBXkfi70hZceZ+4lyBOZHlWnD98h8aF7nv8O1YUMkkiPI98VJoUoJ/APwAP7OhTfUXDyI1SWGeO66PYGuJ9kvpkoY8Cce3RvlIWcRcO/wCUlKfj16095O+YEu3OG4ST1xdR9pNdlT8aTNk3vBhmSWSZcYOPvkWgR78aKx4YSMS4s6yKTdq4AIr3qwtlAjpT3sxfKyY5DKHZXn5DiWX/AC71xO4Q8lA5CqroDV8mEpYt2D51XJhMw+8V606sWAMh+Dd5BBiK8MSxkhumIII8GvB0wY+64uPgQwxyMs0hojrq7NerPWs+EEwWibrwfjUp+sJFd2LcSCOz1R0bS0hJWc3lv0//2Q==" alt="" />
+                                        <img src="data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAABgUHAwT/xAAqEAACAgIBAwMDBAMAAAAAAAABAgMEBREhAAYSEzFBFCNxIjJRUmGBsf/EABcBAAMBAAAAAAAAAAAAAAAAAAIEBQb/xAAkEQABAwMDBAMAAAAAAAAAAAABAgMRAAQhBTFhExQiQaHB4f/aAAwDAQACEQMRAD8A0F2r5KnJHFIrKw1x7g/B1+R0NyeRtYOPF21lnhrV8iI7sUTENYVgCqa3pgBHJwTr9Q/k9Uqv11juPIU8VibNyWo/gLVTxWGEMoOmLkK8kXkAV2PPWzrR3UTsCtncDNNks93DeWv5u8Nib7TsgPPiV2AR/B2N631QuLgLbKUD8P3Wd03T+3fBdUIOw3kR8b+68/clC82ScmrL6SeMayBD4nf+fb3PVRWr4ynHHLIqqo1z7k/J1+T1Hl7ZwPbdank4BJVsRTb9d7UnifYBXB8gEJbRJ0OdFhvnjBWbNVlvVPSNeWWUQTeTfchVvBWYNyHJVidca8fbphm56sIXikL3TwyJSrxTgyIzxvNIOxcquOiYLTipY2FCnnEpWMj+rsfdud+ROyeNnfSHCZ2lQ7us9vRSO31sTZCJpSAPHYAReed6bjQICn89Cu6sBiMviBFkfqKyQoFSWs52BsHRQ8Nz/wBJ9+gseO7l7VsJksTMMrWgAVbdQfdjGvEB0IPHOh5A8DjXU69LjZKm0ePFaHRe1vAOo75iYnGT6n2K2Ohlo6NnIpchZJKNT1Wkd1EIMhI03O+PSJ2PjfRBrC49ZLGGiifH2XErTqxdJZCo23B0pPvoaJGiw30MpUe5M0LVrJT2cVibzl7Uk8n3rQ5BCpwDr9vAAAI3x047T7dw2GxTx4tZ51srqSWyx23P9BwD8f6B+OisVOKIWpGOaDXU2lu2Wg7KjuANzzX/2Q==" alt="" />
                                         <div>
                                             <div class="name">
-                                                <div>No Stone Unturned</div>
+                                                <div>Boss Fight Aficionado</div>
                                                 <div class="unlocked">13 Sept 2026</div>
                                             </div>
-                                            <div class="description">Complete your first Expedition</div>
+                                            <div class="description">You've won against Remembrances in the Dream World at least 10 times in challenge mode. Now, you know them more than anyone else.</div>
                                         </div>
                                     </div>
                                     <div class="achievement">
                                         <div>
-                                            <div class="description ellipsis">+23 others...</div>
+                                            <div class="description ellipsis">+50 others...</div>
                                         </div>
                                     </div>
                                 </div>
