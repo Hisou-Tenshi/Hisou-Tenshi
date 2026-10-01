@@ -89,4 +89,4 @@
 | KAITO | \#0000FF | <img src="./colors/0000FF.png" alt="#0000FF" height="15px"> |
 | MEIKO | \#D80000 | <img src="./colors/D80000.png" alt="#D80000" height="15px"> |
 
-<p align="center"><sub>Copyright © 2025–2026 緋想天子 (Hisou-Tenshi) · 最后更新 2026-09</sub></p>
+<p align="center"><sub>Copyright © 2025–2026 緋想天子 (Hisou-Tenshi) · 最后更新 2026-10</sub></p>
