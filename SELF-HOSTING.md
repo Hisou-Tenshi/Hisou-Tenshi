@@ -132,6 +132,11 @@ commits.flatMap(commit => commit.payload.commits.filter(...))   // ← payload.c
 | `activity` | `activity/index.mjs` PushEvent 分支<br>`commits.filter(...)` | GitHub 从 `PushEvent.payload` 中移除了 `commits` 字段，只保留 `before`/`head`/`size`/`push_id` | 2025-10 |
 | `habits` | `habits/index.mjs:50`<br>`flatMap(({payload}) => payload.commits)` | 同上（它自己也读 events 流） | 2025-10 |
 | `achievements` | Projects (classic) 成就 | GitHub 下线旧 Projects API | 长期 |
+| `steam`（模板层） | `templates/classic/partials/steam.ejs:56`<br>`genres.join(", ")` | 某款游戏的 `genres` 字段缺失（Steam API 数据抖动），模板对 undefined 直接 `.join` → `TypeError`。与 GitHub API 无关，Steam 侧恢复后自动转绿；已在 workflow 的 steam 步骤加 `continue-on-error`，避免单步崩溃连带冻结当天其余全部图 | 2026-09-25~27 |
+
+> 除 GitHub 字段变更外，**外部服务的数据抖动**（Steam/YouTube Music）也会以同样的
+> 「undefined → TypeError」形式炸模板，但这类故障通常是自愈的：先看昨天和今天
+> 两次运行的日志是否同一行报错，连续多天同一处再当真。
 
 `activity` 那个坑还有一个隐蔽点：**事件解析发生在 `plugin_activity_filter` 过滤之前**，
 所以把 filter 缩到只剩 `ref/create` 也救不回来——只要 events 流里有一个 PushEvent

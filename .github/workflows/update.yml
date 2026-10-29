@@ -169,8 +169,17 @@ jobs:
 
       # -----------------------------------------------------------------------
       # Profile and detailed game history
+      #
+      # ⚠️ 2026-09-25~27 连续三天红，根因在分叉的 classic 模板 steam.ejs:56：
+      #    直接 `<%= genres.join(", ") %>`，某款游戏的 genres 字段缺失
+      #    （Steam API 返回 undefined）时整步崩溃退出（"Cannot read properties
+      #    of undefined (reading 'join')"）。且这一步一崩，它之后的所有 step
+      #    都被连带跳过，当天其余十几张图全部冻结；9/28 Steam 侧数据恢复才转绿。
+      #    Steam/YouTube Music 等外部服务的数据抖动不受我们控制，故此步加
+      #    continue-on-error：再崩只黄一格（⚠️ 注释），不影响当天其它图的更新。
       # -----------------------------------------------------------------------
       - name: Profile and detailed game history
+        continue-on-error: true
         uses: gh-metrics/metrics@master
         with:
           filename: github-metrics/steam.full.svg

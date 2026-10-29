@@ -1,23 +1,35 @@
 # [Ciallo～(∠・ω< )⌒☆](https://ciallo.cc/)
 ###### Preference：[简体中文](https://www.gov.cn/)｜[繁體中文](http://big5.www.gov.cn/gate/big5/www.gov.cn/)｜[日本語](https://www.kunaicho.go.jp/)｜[English](https://www.gov.uk/)<p align="right">☛<a href="https://hisou-tenshi.github.io/">More Info</a></p>
 
-<a href="https://github.com/lowlighter/metrics"><img width="450rem" src="./github-metrics/base.svg"></a>
-<a href='https://www.yuzu-soft.com/'><img width="350" alt="GIF" src="./colors/ciallo.gif" align="right"></a>
+<!--
+  ⚠️ 图片一律写绝对 URL（raw.githubusercontent.com/.../refs/heads/main/...），不要写相对路径！
+  原因：相对路径（src="./github-metrics/x.svg"）在 GitHub 渲染后变成站点内相对地址
+  /<owner>/<repo>/raw/main/...，浏览器再被 302 到 raw.githubusercontent.com——
+  该域名在大陆网络常年被 DNS 污染（2026-10-29 实测解析到 0.0.0.0，连接直接被拒），
+  于是 README 里所有相对路径图片集体渲染失败，页面上表现为
+  「Error rendering embedded code / Invalid image source」。
+  改成绝对 URL 后会被 GitHub 的 camo 图片代理接管（camo.githubusercontent.com）：
+  由 GitHub 服务器代取内容、从 camo 域下发，浏览器不再直连 raw。实测 camo 可达。
+  代价：camo 有短时缓存，SVG 每日更新会晚几小时生效；急着刷新可在 URL 尾部加 ?v=日期。
+  2026-10-29 修复「README 图片全灭」时统一改写。
+-->
+<a href="https://github.com/lowlighter/metrics"><img width="450rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/base.svg"></a>
+<a href='https://www.yuzu-soft.com/'><img width="350" alt="GIF" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/ciallo.gif" align="right"></a>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/steam.full.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/youtube.music.svg" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/steam.full.svg"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/youtube.music.svg" align="right"></a>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/isocalendar.fullyear.svg" ></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/calendar.full.svg" align="right"></a><br><br><br>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/isocalendar.fullyear.svg" ></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/calendar.full.svg" align="right"></a><br><br><br>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/habits.charts.svg" align="left"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/habits.charts.svg" align="left"></a>
 <!--
   下面这张是 metrics 原生生成的语言统计（走 plugin_languages + indepth）。
   它一直被 workflow 每天生成，但此前从未在 README 里展示过；而 base.svg 里并没有开
   plugin_languages，所以整份 README 原本完全没有语言统计。放在这里与 habits 图并排。
   已知瑕疵：标题会写 "11 Languages" 但只列出 4-5 种（详见 SELF-HOSTING.md §3.4）。
 -->
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/languages.indepth.svg" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/languages.indepth.svg" align="right"></a>
 <br clear="all">
 <br>
 
@@ -37,21 +49,21 @@
   但只输出文字结论（缩进风格、平均行长、最常写代码的时段与星期），不画图。
   两者共用 events 流，所以历史上 charts 图挂掉时这张也一样是坏的。
 -->
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/habits.facts.svg" align="left"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/habits.facts.svg" align="left"></a>
 <br clear="all">
 <br>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/followup.indepth.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/activity.svg" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/followup.indepth.svg"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/activity.svg" align="right"></a>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/stackoverflow.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/reactions.svg" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/stackoverflow.svg"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/reactions.svg" align="right"></a>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/stars.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/people.followers.svg" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/stars.svg"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/people.followers.svg" align="right"></a>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/stargazers.chartist.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="./github-metrics/repositories.pinned.svg" align="right"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/stargazers.chartist.svg"></a>
+<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/repositories.pinned.svg" align="right"></a>
 <br clear="all">
 
 <!--
@@ -60,7 +72,7 @@
   它统计的是本仓库自身及依赖的许可证情况，与其它卡的统计口径无关。
 -->
 <h3 align="center">📜 Licenses overview</h3>
-<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="./github-metrics/licenses.overview.svg"></a></p>
+<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/licenses.overview.svg"></a></p>
 
 <!--
   🏆 Achievements（compact display）。
@@ -72,21 +84,21 @@
   等修好之前，这里会显示一张错误占位图；如不想显示，把下面两行注释掉即可。
 -->
 <h3 align="center">🏆 Achievements</h3>
-<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="./github-metrics/achievements.compact.svg"></a></p>
+<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/github-metrics/achievements.compact.svg"></a></p>
 
 
 
 ###### 【付属資料】カラーコードまとめ
 | V | HEX | Λ |
 |:---:|:---:|:---:|
-| 初音ミク | \#39C5BB | <img src="./colors/39C5BB.png" alt="#39C5BB" height="15px"> |
-| 重音テト | \#E25577 | <img src="./colors/E25577.png" alt="#E25577" height="15px"> |
-| 鏡音リン | \#FFA500 | <img src="./colors/FFA500.png" alt="#FFA500" height="15px"> |
-| 鏡音レン | \#FFE211 | <img src="./colors/FFE211.png" alt="#FFE211" height="15px"> |
-| 巡音ルカ | \#FFC0CB | <img src="./colors/FFC0CB.png" alt="#FFC0CB" height="15px"> |
-| 桃音モモ | \#FFC7C8 | <img src="./colors/FFC7C8.png" alt="#FFC7C8" height="15px"> |
-| 唄音ウタ | \#CB85FF | <img src="./colors/CB85FF.png" alt="#CB85FF" height="15px"> |
-| KAITO | \#0000FF | <img src="./colors/0000FF.png" alt="#0000FF" height="15px"> |
-| MEIKO | \#D80000 | <img src="./colors/D80000.png" alt="#D80000" height="15px"> |
+| 初音ミク | \#39C5BB | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/39C5BB.png" alt="#39C5BB" height="15px"> |
+| 重音テト | \#E25577 | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/E25577.png" alt="#E25577" height="15px"> |
+| 鏡音リン | \#FFA500 | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/FFA500.png" alt="#FFA500" height="15px"> |
+| 鏡音レン | \#FFE211 | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/FFE211.png" alt="#FFE211" height="15px"> |
+| 巡音ルカ | \#FFC0CB | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/FFC0CB.png" alt="#FFC0CB" height="15px"> |
+| 桃音モモ | \#FFC7C8 | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/FFC7C8.png" alt="#FFC7C8" height="15px"> |
+| 唄音ウタ | \#CB85FF | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/CB85FF.png" alt="#CB85FF" height="15px"> |
+| KAITO | \#0000FF | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/0000FF.png" alt="#0000FF" height="15px"> |
+| MEIKO | \#D80000 | <img src="https://raw.githubusercontent.com/Hisou-Tenshi/Hisou-Tenshi/refs/heads/main/colors/D80000.png" alt="#D80000" height="15px"> |
 
 <p align="center"><sub>Copyright © 2025–2026 緋想天子 (Hisou-Tenshi) · 最后更新 2026-10</sub></p>
