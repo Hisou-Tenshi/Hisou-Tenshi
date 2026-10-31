@@ -373,10 +373,24 @@ jobs:
       # -----------------------------------------------------------------------
       # 🈷️ Languages activity
       #
-      # ⚠️ 已知数据质量问题：标题会写 "11 Languages"，但列表里通常只有 4-5 种。
-      #    因为 "11" 来自各仓库 languages.edges 的去重并集（含 0 字节的语言），
-      #    而 indepth 分析器统计出的 0 行/0 字节语言会被静默丢弃。
-      #    这是上游行为，不是本仓库配置错误。
+      # ⚠️ 这张图长期带一句 "Reached maximum execution time for analysis,
+      #    partial results are displayed"（语言统计不完整）。根因不是"0 字节
+      #    语言被丢弃"——那只是标题数字与列表条数对不上的上游行为，与超时无关。
+      #    真正原因在 indepth 模式本身：它会 clone 每个仓库，再对每条本人
+      #    authored commit 跑 `git log --patch` + linguist 分析整棵工作树，
+      #    耗时与仓库体积/提交数成正比。本账号有 4 个仓库几乎吃光了全部预算：
+      #      · Hisou-Tenshi.github.io  2.95GB / 233 commits
+      #      · Tenshi                  2.35GB / 9072 commits
+      #      · Elaina                   170MB / 2005 commits
+      #      · Hisou-Tenshi（本仓库）    12MB / 3484 commits（每天自动提交 SVG）
+      #    下面用 plugin_languages_skipped 排除这 4 个；自有仓库里剩下最大的
+      #    也只是 176MB / 18 commits（Course-Projects），可以完整跑完。
+      #    以后若警告重现，先查是不是又多了巨型仓库，把它加进 skip 列表，
+      #    而不是盲目继续加超时。
+      #
+      #    另外标题 "11 Languages" 仍可能多于列表条数：11 来自各仓库
+      #    languages.edges 的去重并集（含 0 字节语言），而 indepth 统计出的
+      #    0 行/0 字节语言会被静默丢弃。这是上游行为，不是本仓库配置错误。
       # -----------------------------------------------------------------------
       - name: Indepth analysis
         uses: gh-metrics/metrics@master
@@ -387,12 +401,19 @@ jobs:
           plugin_languages: yes
           plugin_languages_ignored: >-
             jupyter notebook, dockerfile, makefile
+          # 跳过体积/提交数过大的仓库（indepth 会 clone + 逐 commit 分析，
+          # 它们超时后只会污染 partial 结果）。名称大小写不敏感。
+          plugin_languages_skipped: >-
+            Tenshi, Elaina, Hisou-Tenshi.github.io, Hisou-Tenshi
           plugin_languages_indepth: yes
           plugin_languages_details: lines, bytes-size, percentage
           plugin_languages_limit: 8
-          # indepth 会 clone 仓库并用 linguist 逐文件分析，容易超时；
-          # 之前是 15，语言统计不完整，放宽到 30
-          plugin_languages_analysis_timeout: 30
+          # indepth 的两级预算，单位都是**分钟**（默认 15 / 7.5，上游上限 60 / 15）：
+          #   analysis_timeout              → 整次分析的总预算，超了显示警告
+          #   analysis_timeout_repositories → 单个仓库的预算，超了只丢该仓库剩余 commit
+          # 排除大仓库后 45 / 15 足够跑完，同时保留兜底防止将来再拖死 job。
+          plugin_languages_analysis_timeout: 45
+          plugin_languages_analysis_timeout_repositories: 15
           extras_css: |
                 title {
                   color: #E25577;

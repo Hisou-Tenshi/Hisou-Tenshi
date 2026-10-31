@@ -160,9 +160,16 @@ commits.flatMap(commit => commit.payload.commits.filter(...))   // ← payload.c
 - `discussions.svg` — 仓库没开 Discussions 或没有讨论时就是空的。
 - `stackoverflow.svg` — `plugin_stackoverflow_user: 1` 是官方示例里的**占位数值**，
   需要换成真实的 Stack Overflow 用户 ID，否则拉到的不是本人的数据。
-- `languages.indepth.svg` — 标题写 "11 Languages" 但列表只有 4-5 种：`11` 来自各仓库
-  `languages.edges` 的去重并集（包含 0 字节的语言），而 indepth 分析器统计出的
-  0 行/0 字节语言会被静默丢弃。属于上游行为，不是配置错误。
+- `languages.indepth.svg` — 两件事要分清：
+  1. 标题写 "11 Languages" 但列表只有 4-5 种：`11` 来自各仓库
+     `languages.edges` 的去重并集（包含 0 字节的语言），而 indepth 分析器统计出的
+     0 行/0 字节语言会被静默丢弃。属于上游行为，不是配置错误。
+  2. 图里那句 "Reached maximum execution time for analysis, partial results are
+     displayed" 是**真的超时**，不是上面那个计数问题：indepth 会 clone 每个仓库，
+     再逐条本人 commit 跑 `git log --patch` + linguist，Tenshi / Elaina /
+     Hisou-Tenshi.github.io / 本仓库这几个大仓库吃光了预算。已在 workflow 里用
+     `plugin_languages_skipped` 排除它们，并把两级超时放宽到 45 / 15 分钟。
+     若警告重现，先查是不是又多了巨型仓库，往 skip 列表里加即可。
 
 ### 3.5 「生成了但没展示」的文件
 

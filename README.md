@@ -1,109 +1,147 @@
-# [Ciallo～(∠・ω< )⌒☆](https://ciallo.cc/)
-###### Preference：[简体中文](https://www.gov.cn/)｜[繁體中文](http://big5.www.gov.cn/gate/big5/www.gov.cn/)｜[日本語](https://www.kunaicho.go.jp/)｜[English](https://www.gov.uk/)<p align="right">☛<a href="https://hisou-tenshi.github.io/">More Info</a></p>
+<!--
+  ⚠️ 图片地址规范（改 README 前先读）
+
+  所有 metrics 图片一律使用 jsDelivr 绝对 URL：
+      https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/<path>
+  · 不要写相对路径：GitHub 会把相对地址重定向到 raw.githubusercontent.com。
+  · 不要直接写 raw.githubusercontent.com 的绝对 URL：GitHub 不把 raw 视为第三方域名，
+    不会送进 camo 代理，浏览器只能直连——而该域名在大陆常年被 DNS 污染，图片会全灭。
+  · jsDelivr 是第三方域名，GitHub 渲染时会经 camo（camo.githubusercontent.com）代取，
+    浏览器全程不碰 raw，所以稳定。
+  代价：jsDelivr 对 @main 有约 12h 边缘缓存，SVG 每日更新会晚几小时生效；
+  急着刷新可访问
+      https://purge.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/<path>
+  架构、排障与自建方案见 SELF-HOSTING.md。
+-->
+
+<div align="center">
+
+# Ciallo～(∠・ω< )⌒☆
+
+**緋想天子 · Hisou-Tenshi**
+
+<i>「空の天気も、地の安定も、人の気質も私の掌の上　数多の妖怪を退治してきた貴方の天気！見せて貰うわよ！」</i>
+
+<sub>📍 幻想郷 · 非想非非想天　·　有頂天</sub>
+
+[🌐 Website](https://hisou-tenshi.github.io/)　·　[📝 Blog](https://tenshi.qzz.io/)　·　[💻 GitHub](https://github.com/Hisou-Tenshi?tab=repositories)
+
+<sub>Preference：<a href="https://www.gov.cn/">简体中文</a>｜<a href="http://big5.www.gov.cn/gate/big5/www.gov.cn/">繁體中文</a>｜<a href="https://www.kunaicho.go.jp/">日本語</a>｜<a href="https://www.gov.uk/">English</a></sub>
+
+<p>
+<kbd>Python</kbd> <kbd>HTML</kbd> <kbd>JavaScript</kbd> <kbd>CSS</kbd> <kbd>TeX</kbd> <kbd>C</kbd> <kbd>R</kbd>
+</p>
+
+</div>
+
+<h3 align="center">📊 数据概览 · Stats</h3>
+
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/base.svg" alt="GitHub 个人概览"></a>
+  <a href="https://www.yuzu-soft.com/"><img width="360" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/ciallo.gif" alt="Ciallo"></a>
+</p>
+
+<h3 align="center">🧠 语言与习惯 · Languages &amp; Habits</h3>
 
 <!--
-  ⚠️ 图片一律写 jsDelivr 绝对 URL（cdn.jsdelivr.net/gh/<user>/<repo>@main/...），
-  不要写相对路径，也不要写 raw.githubusercontent.com！两层原因：
-  1. 相对路径（src="./github-metrics/x.svg"）在 GitHub 渲染后变成站点内相对地址
-     /<owner>/<repo>/raw/main/...，浏览器再被 302 到 raw.githubusercontent.com。
-  2. raw.githubusercontent.com 在大陆网络常年被 DNS 污染（2026-10-29 实测解析到
-     0.0.0.0，连接直接被拒），且 GitHub 把 raw 视作自家域名、**不会**把它送进
-     camo 代理——所以改成 raw 的绝对 URL 也没用，浏览器照样直连被污染的域名，
-     页面上表现为「Error rendering embedded code / Invalid image source」。
-  ✅ 正解：写 cdn.jsdelivr.net（第三方域名）→ GitHub 渲染时自动送进 camo 代理
-  （camo.githubusercontent.com，实测 DNS 干净可达）→ camo 由 GitHub 服务器代取
-  jsDelivr 内容后从 camo 域下发，浏览器全程不碰 raw。
-  代价：jsDelivr 对 @main 分支有 ~12h 边缘缓存 + camo 短缓存，SVG 每日更新
-  会晚几小时生效；急着刷新可请求 https://purge.jsdelivr.net/gh/<user>/<repo>@main/<path>
-  或在 URL 尾部加 ?v=日期 破缓存。
-  2026-10-29 修复「README 图片全灭」时统一改写。
+  languages.indepth.svg 走 metrics 的 languages 插件（plugin_languages + indepth）。
+  它按「本人提交过的 commit」逐条 clone + linguist 分析，所以仓库一大就会超时并
+  在卡片底部显示 "Reached maximum execution time ... partial results"。
+  现在在 update.yml 里用 plugin_languages_skipped 排除了 Tenshi / Elaina /
+  Hisou-Tenshi.github.io / 本仓库这几个大仓库，并把超时放宽。
+  标题里的 "N Languages" 是各仓库语言并集的去重数（含跳过仓库与 0 字节语言），
+  所以仍可能大于下方实际列出的数量——这是上游行为，不是配置错误。
 -->
-<a href="https://github.com/lowlighter/metrics"><img width="450rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/base.svg"></a>
-<a href='https://www.yuzu-soft.com/'><img width="350" alt="GIF" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/ciallo.gif" align="right"></a>
-
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/steam.full.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/youtube.music.svg" align="right"></a>
-
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/isocalendar.fullyear.svg" ></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/calendar.full.svg" align="right"></a><br><br><br>
-
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.charts.svg" align="left"></a>
-<!--
-  下面这张是 metrics 原生生成的语言统计（走 plugin_languages + indepth）。
-  它一直被 workflow 每天生成，但此前从未在 README 里展示过；而 base.svg 里并没有开
-  plugin_languages，所以整份 README 原本完全没有语言统计。放在这里与 habits 图并排。
-  已知瑕疵：标题会写 "11 Languages" 但只列出 4-5 种（详见 SELF-HOSTING.md §3.4）。
--->
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/languages.indepth.svg" align="right"></a>
-<br clear="all">
-<br>
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/languages.indepth.svg" alt="最常用的语言"></a>
+  <a href="https://github.com/stats-organization/github-stats-extended"><img width="430" src="https://github-stats-extended.vercel.app/api/top-langs?username=Hisou-Tenshi&layout=compact&title_color=39c5bb&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500" alt="Top languages"></a>
+</p>
 
 <!--
-  top-langs 卡片：原用 github-readme-stats.vercel.app 公共实例，该实例已返回 HTTP 503
-  且项目被作者归档（官方请改用 stats-organization/github-stats-extended），故整体迁到：
-    https://github-stats-extended.vercel.app/api/top-langs
-  迁移前后参数完全兼容。若该实例以后也不稳定，见 SELF-HOSTING.md 里的自建方案。
-  username 已随账号改名由 Shameimaru-Ayaya 更新为 Hisou-Tenshi。
-  注：这张与上面的 languages.indepth 数据来源不同（外部服务统计的是各仓库语言字节占比，
-  会含 README/SVG 等文件），两者并存是有意的，不是重复表达。
+  上面右图是第三方托管服务（github-stats-extended，github-readme-stats 的官方继任项目），
+  统计口径是各仓库语言字节占比，与左侧 metrics 的「按提交行数」不同，数字对不上属正常。
+  若该实例挂掉，可换源或在 README 的 SELF-HOSTING.md §5 里找自建方案。
 -->
-<a href="https://github.com/stats-organization/github-stats-extended"><img width="400rem" src="https://github-stats-extended.vercel.app/api/top-langs?username=Hisou-Tenshi&layout=compact&title_color=39c5bb&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500"></a>
 
-<!--
-  habits.facts.svg：与上面的 habits.charts 同一个插件（💡 Coding habits and activity），
-  但只输出文字结论（缩进风格、平均行长、最常写代码的时段与星期），不画图。
-  两者共用 events 流，所以历史上 charts 图挂掉时这张也一样是坏的。
--->
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.facts.svg" align="left"></a>
-<br clear="all">
-<br>
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="460" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.charts.svg" alt="编程习惯图表"></a>
+</p>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/followup.indepth.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/activity.svg" align="right"></a>
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="460" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.facts.svg" alt="编程习惯文字结论"></a>
+</p>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stackoverflow.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/reactions.svg" align="right"></a>
+<h3 align="center">📅 贡献活动 · Activity</h3>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stars.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/people.followers.svg" align="right"></a>
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/isocalendar.fullyear.svg" alt="全年贡献"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/calendar.full.svg" alt="贡献日历"></a>
+</p>
 
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stargazers.chartist.svg"></a>
-<a href="https://github.com/lowlighter/metrics"><img width="400rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/repositories.pinned.svg" align="right"></a>
-<br clear="all">
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/followup.indepth.svg" alt="Issue 与 PR 状态"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/activity.svg" alt="最近活动"></a>
+</p>
 
-<!--
-  📜 Repository licenses（Licenses overview 变体）。
-  这是唯一一张用 repository 模板出来的图（plugin_licenses 在 classic 模板下没有 partial）。
-  它统计的是本仓库自身及依赖的许可证情况，与其它卡的统计口径无关。
--->
-<h3 align="center">📜 Licenses overview</h3>
-<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/licenses.overview.svg"></a></p>
+<h3 align="center">🧩 社区与成就 · Community &amp; Achievements</h3>
 
-<!--
-  🏆 Achievements（compact display）。
-  ⚠️ 这张卡目前仍然是坏的：生成的 SVG 内容是 "Unexpected error"，原因见
-  .github/workflows/update.yml 里 Compact display 那一步的注释——是上游
-  achievements 插件初始化「全站用户数/仓库数」失败后 reject 了一个字符串，
-  而格式化成错误信息时被吞掉了真实原因。与 habits/activity 的 PushEvent 问题无关，
-  改配置无法解决，需要在 fork 源码里修。
-  等修好之前，这里会显示一张错误占位图；如不想显示，把下面两行注释掉即可。
--->
-<h3 align="center">🏆 Achievements</h3>
-<p align="center"><a href="https://github.com/gh-metrics/metrics"><img width="480rem" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/achievements.compact.svg"></a></p>
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stackoverflow.svg" alt="Stack Overflow 数据"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/achievements.compact.svg" alt="GitHub 成就"></a>
+</p>
 
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/reactions.svg" alt="评论表情反应"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/people.followers.svg" alt="关注者"></a>
+</p>
 
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/repositories.pinned.svg" alt="置顶仓库"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="430" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/licenses.overview.svg" alt="许可证概览"></a>
+</p>
 
-###### 【付属資料】カラーコードまとめ
-| V | HEX | Λ |
-|:---:|:---:|:---:|
-| 初音ミク | \#39C5BB | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/39C5BB.png" alt="#39C5BB" height="15px"> |
-| 重音テト | \#E25577 | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/E25577.png" alt="#E25577" height="15px"> |
-| 鏡音リン | \#FFA500 | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFA500.png" alt="#FFA500" height="15px"> |
-| 鏡音レン | \#FFE211 | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFE211.png" alt="#FFE211" height="15px"> |
-| 巡音ルカ | \#FFC0CB | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFC0CB.png" alt="#FFC0CB" height="15px"> |
-| 桃音モモ | \#FFC7C8 | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFC7C8.png" alt="#FFC7C8" height="15px"> |
-| 唄音ウタ | \#CB85FF | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/CB85FF.png" alt="#CB85FF" height="15px"> |
-| KAITO | \#0000FF | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/0000FF.png" alt="#0000FF" height="15px"> |
-| MEIKO | \#D80000 | <img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/D80000.png" alt="#D80000" height="15px"> |
+<h3 align="center">⭐ 星标 · Stars</h3>
 
-<p align="center"><sub>Copyright © 2025–2026 緋想天子 (Hisou-Tenshi) · 最后更新 2026-10</sub></p>
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stars.svg" alt="最近点星"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stargazers.chartist.svg" alt="Star 趋势"></a>
+</p>
+
+<h3 align="center">🎮 生活 · Life</h3>
+
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="460" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/steam.full.svg" alt="Steam 游戏记录"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/lowlighter/metrics"><img width="460" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/youtube.music.svg" alt="最近在听的音乐"></a>
+</p>
+
+<h3 align="center">🎨 カラーコード · Colors</h3>
+
+<p align="center"><sub>Vocaloid 主题色 · 同时也是上方 metrics 卡片标题与图表的配色来源</sub></p>
+
+<table align="center">
+  <thead>
+    <tr><th align="center">V</th><th align="center">HEX</th><th align="center">Λ</th></tr>
+  </thead>
+  <tbody>
+    <tr><td align="center">初音ミク</td><td align="center">#39C5BB</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/39C5BB.png" alt="#39C5BB" height="15"></td></tr>
+    <tr><td align="center">重音テト</td><td align="center">#E25577</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/E25577.png" alt="#E25577" height="15"></td></tr>
+    <tr><td align="center">鏡音リン</td><td align="center">#FFA500</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFA500.png" alt="#FFA500" height="15"></td></tr>
+    <tr><td align="center">鏡音レン</td><td align="center">#FFE211</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFE211.png" alt="#FFE211" height="15"></td></tr>
+    <tr><td align="center">巡音ルカ</td><td align="center">#FFC0CB</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFC0CB.png" alt="#FFC0CB" height="15"></td></tr>
+    <tr><td align="center">桃音モモ</td><td align="center">#FFC7C8</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFC7C8.png" alt="#FFC7C8" height="15"></td></tr>
+    <tr><td align="center">唄音ウタ</td><td align="center">#CB85FF</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/CB85FF.png" alt="#CB85FF" height="15"></td></tr>
+    <tr><td align="center">KAITO</td><td align="center">#0000FF</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/0000FF.png" alt="#0000FF" height="15"></td></tr>
+    <tr><td align="center">MEIKO</td><td align="center">#D80000</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/D80000.png" alt="#D80000" height="15"></td></tr>
+  </tbody>
+</table>
+
+<div align="center">
+
+<sub>Copyright © 2025–2026 緋想天子 (Hisou-Tenshi) · 卡片由 GitHub Actions 每日自动更新</sub>
+
+<sub>Powered by <a href="https://github.com/gh-metrics/metrics">gh-metrics/metrics</a> · 维护与排障见 <a href="SELF-HOSTING.md">SELF-HOSTING.md</a></sub>
+
+</div>
