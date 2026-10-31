@@ -38,14 +38,14 @@ footer {
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="359.4547273455496" height="8" fill="#e34c26"/>
-                    <rect mask="url(#languages-bar)" x="359.4547273455496" y="0" width="76.56471159649062" height="8" fill="#3572A5"/>
-                    <rect mask="url(#languages-bar)" x="436.0194389420402" y="0" width="17.06308141484181" height="8" fill="#3D6117"/>
-                    <rect mask="url(#languages-bar)" x="453.082520356882" y="0" width="3.7705675641878367" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="456.85308792106986" y="0" width="1.763079058826088" height="8" fill="#663399"/>
-                    <rect mask="url(#languages-bar)" x="458.616166979896" y="0" width="1.0736907348775506" height="8" fill="#555555"/>
-                    <rect mask="url(#languages-bar)" x="459.6898577147735" y="0" width="0.26487053693598345" height="8" fill="#e16737"/>
-                    <rect mask="url(#languages-bar)" x="459.95472825170947" y="0" width="0.04527174829052936" height="8" fill="#0298c3"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="359.44181561794574" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="359.44181561794574" y="0" width="76.28270238095425" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="435.7245179989" y="0" width="17.000233320672887" height="8" fill="#3D6117"/>
+                    <rect mask="url(#languages-bar)" x="452.7247513195729" y="0" width="4.059341643171045" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="456.7840929627439" y="0" width="1.8371710606371539" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="458.62126402338106" y="0" width="1.0697360320443807" height="8" fill="#555555"/>
+                    <rect mask="url(#languages-bar)" x="459.69100005542543" y="0" width="0.2638949447763254" height="8" fill="#e16737"/>
+                    <rect mask="url(#languages-bar)" x="459.9548950002018" y="0" width="0.04510499979823885" height="8" fill="#0298c3"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -57,7 +57,7 @@ footer {
                                 HTML
                             </div>
                             <small>
-                                <div>19.8 MB</div>
+                                <div>19.9 MB</div>
                                 <div>78.14%</div>
                             </small>
                         </div>
@@ -70,7 +70,7 @@ footer {
                             </div>
                             <small>
                                 <div>941 kB</div>
-                                <div>3.71%</div>
+                                <div>3.7%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -81,8 +81,8 @@ footer {
                                 CSS
                             </div>
                             <small>
-                                <div>97.2 kB</div>
-                                <div>0.38%</div>
+                                <div>101 kB</div>
+                                <div>0.4%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -108,7 +108,7 @@ footer {
                             </div>
                             <small>
                                 <div>4.22 MB</div>
-                                <div>16.64%</div>
+                                <div>16.58%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -119,8 +119,8 @@ footer {
                                 JavaScript
                             </div>
                             <small>
-                                <div>208 kB</div>
-                                <div>0.82%</div>
+                                <div>224 kB</div>
+                                <div>0.88%</div>
                             </small>
                         </div>
                         <div class="field language details">
