@@ -14,7 +14,7 @@
 github-metrics/*.svg              ← 生成后由 action 自动提交回本仓库
         │
         ▼
-README.md                         ← 用相对路径 ./github-metrics/xxx.svg 内联引用
+README.md                         ← 用 jsDelivr 绝对 URL 内联引用（原因见 README 顶部注释）
 ```
 
 另有一张卡片不走 metrics，而是第三方托管服务：
@@ -160,30 +160,27 @@ commits.flatMap(commit => commit.payload.commits.filter(...))   // ← payload.c
 - `discussions.svg` — 仓库没开 Discussions 或没有讨论时就是空的。
 - `stackoverflow.svg` — `plugin_stackoverflow_user: 1` 是官方示例里的**占位数值**，
   需要换成真实的 Stack Overflow 用户 ID，否则拉到的不是本人的数据。
-- `languages.indepth.svg` — 两件事要分清：
-  1. 标题写 "11 Languages" 但列表只有 4-5 种：`11` 来自各仓库
-     `languages.edges` 的去重并集（包含 0 字节的语言），而 indepth 分析器统计出的
-     0 行/0 字节语言会被静默丢弃。属于上游行为，不是配置错误。
-  2. 图里那句 "Reached maximum execution time for analysis, partial results are
-     displayed" 是**真的超时**，不是上面那个计数问题：indepth 会 clone 每个仓库，
-     再逐条本人 commit 跑 `git log --patch` + linguist，Tenshi / Elaina /
-     Hisou-Tenshi.github.io / 本仓库这几个大仓库吃光了预算。已在 workflow 里用
-     `plugin_languages_skipped` 排除它们，并把两级超时放宽到 45 / 15 分钟。
-     若警告重现，先查是不是又多了巨型仓库，往 skip 列表里加即可。
+- `languages.svg` — 2026-10-31 起改用 metrics 的**默认算法**（不再开 indepth）：
+  统计各仓库 `languages.edges` 的字节占比，即「全部仓库的语言占比」，秒级完成、不会超时。
+  之前开 indepth（按本人 commit 逐条 clone + linguist）时，Tenshi / Elaina /
+  Hisou-Tenshi.github.io / 本仓库这几个大仓库会吃光分析预算，卡片长期带
+  "Reached maximum execution time ... partial results" 警告，且 stats 只覆盖
+  被分析到的部分仓库，故放弃。标题里的 "N Languages" 仍是语言并集去重数
+  （含 0 字节语言），可能略多于列表条数，属上游行为。
 
 ### 3.5 「生成了但没展示」的文件
 
 workflow 每天会生成 19 张图。早年有 3 张没有被 README 引用（历史上也从未引用过），
-2026-09 已把其中 2 张修好并加进 README，现在只剩 1 张：
+2026-09 起已陆续补上；现在只剩 1 张没展示：
 
 | 文件 | 状态 | 处理 |
 |---|---|---|
 | `discussions.svg` | ⚪ 内容是「No discussions」 | 仓库没开 Discussions 或没有讨论，暂无展示价值 |
-| ~~`languages.indepth.svg`~~ | ✅ 已加进 README | 与 habits 图并排 |
-| ~~`achievements.compact.svg`~~ | ⚠️ 已加进 README，但**仍是错误占位图** | 见下 |
+| ~~`languages.svg`~~ | ✅ 已加进 README | 与 top-langs 并排（2026-10-31 从 indepth 改回默认算法） |
+| ~~`achievements.compact.svg`~~ | ✅ 已恢复 | 2026-10 起能输出真实徽章，不再显示 `Unexpected error` |
 
-**`achievements.compact.svg` 是唯一一个仍然坏掉的图**，而且它坏的原因
-和 habits/activity 完全不同，值得单独记一笔：
+**`achievements.compact.svg` 曾在 2026-10 之前长期显示 `Unexpected error`**（现在已恢复，
+下面保留历史分析供以后同类故障参考），它坏的原因和 habits/activity 完全不同：
 
 插件执行开头会调用 `total()` 去拿「GitHub 全站用户数 / 仓库数」（用来算成就百分位）：
 
@@ -214,7 +211,8 @@ metrics/compute/plugins > achievements > filling total from github.com/search
 已排除的可能：GitHub 的 REST search 接口本身是通的（`search/repositories` 与
 `search/users` 实测都返回 200），所以更可能是 GraphQL 侧或 puppeteer 侧的问题。
 
-**修复点在 fork 源码里，改本仓库的 workflow 配置解决不了。**
+**当时判断修复点在 fork 源码里，改本仓库的 workflow 配置解决不了；2026-10 上游更新后
+这张图已能正常输出徽章，此节保留作历史排障参考。**
 
 ### 3.6 本地复现排错
 
@@ -333,13 +331,13 @@ README 里这张卡片用的是 `github-stats-extended.vercel.app`，即
 HTML 33.7% / Python 24.9% / JavaScript 13.2% / CSS 8.5% / TeX 5.9% /
 BibTeX Style 5.6% / C 4.4% / R 3.9%。
 
-需要留意的是**它和 `languages.indepth.svg` 统计口径不同**，两个数字对不上是正常的：
+需要留意的是**它和 `languages.svg` 现在都是按各仓库语言字节占比统计**，口径基本一致；
+差别在于 top-langs 的 `size_weight=0.1&count_weight=0.9` 会按仓库数量加权，而且它是第三方
+服务、缓存和可用性不可控，所以两者数字接近但不保证完全相同，属于正常：
 
-- 这张卡：统计各仓库的**语言字节占比**，把 README、SVG、`colors/` 里的图片等
-  都算进 HTML 里，所以 HTML 占比偏高
-- `languages.indepth.svg`：只统计**新增代码行**，并用 linguist 按文件类型识别
-
-如果觉得 HTML 占比失真，可以加 `&exclude_repo=<仓库名>` 排除某些仓库。
+- 两张卡都会把 README、SVG、`colors/` 里的图片等算进 HTML，所以 HTML 占比偏高
+- 如果觉得失真，top-langs 加 `&exclude_repo=<仓库名>`，metrics 卡加
+  `plugin_languages_skipped` 排除某些仓库
 
 ### 5.5 更彻底的替代方案
 
