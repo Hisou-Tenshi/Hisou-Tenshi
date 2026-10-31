@@ -113,19 +113,19 @@ jobs:
           plugin_introduction: yes
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -156,10 +156,10 @@ jobs:
                 .infos div {
                   color: #FFA500 !important; 
                 }
-                svg {color:#FFC0CB !important;}
-                title {color: #E25577 !important;}
-                h1 {color: #E25577 !important;}
-                h2 {color: #39C5BB !important;}
+                svg {color:#39C5BB !important;}
+                title {color: #66CCFF !important;}
+                h1 {color: #66CCFF !important;}
+                h2 {color: #E25577 !important;}
                 h3 {color: #FFA500 !important;}
                 h4 {color: #FFC0CB !important;}
           retries: 3
@@ -195,10 +195,10 @@ jobs:
                   color: #FFA500 !important; 
                 }                
                 .artist { color: #FFE211 !important; }
-                svg {color:#FFC0CB !important;}
-                title {color: #E25577 !important;}
-                h1 {color: #E25577 !important;}
-                h2 {color: #39C5BB !important;}
+                svg {color:#39C5BB !important;}
+                title {color: #66CCFF !important;}
+                h1 {color: #66CCFF !important;}
+                h2 {color: #E25577 !important;}
                 h3 {color: #FFA500 !important;}
                 h4 {color: #FFC0CB !important;}
           retries: 3
@@ -222,19 +222,19 @@ jobs:
           plugin_isocalendar_duration: full-year
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -257,19 +257,19 @@ jobs:
           plugin_calendar_limit: 0
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -303,19 +303,19 @@ jobs:
           config_timezone: Asia/Tokyo
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -348,19 +348,19 @@ jobs:
           config_timezone: Asia/Tokyo
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -395,19 +395,19 @@ jobs:
           plugin_languages_limit: 8
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -430,19 +430,19 @@ jobs:
           plugin_stargazers_charts_type: graph
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -465,19 +465,19 @@ jobs:
           plugin_stars_limit: 10
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -500,19 +500,19 @@ jobs:
           plugin_followup_indepth: yes
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -536,19 +536,19 @@ jobs:
           plugin_reactions_details: percentage
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -573,19 +573,19 @@ jobs:
           plugin_people_types: followers, following
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -608,19 +608,19 @@ jobs:
           plugin_repositories_pinned: 2
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -662,19 +662,19 @@ jobs:
           plugin_licenses_ratio: yes
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -698,19 +698,19 @@ jobs:
           plugin_discussions_categories_limit: 8
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -763,19 +763,19 @@ jobs:
           plugin_achievements_threshold: X
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -808,19 +808,19 @@ jobs:
           config_timezone: Asia/Tokyo
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
@@ -847,19 +847,19 @@ jobs:
           plugin_stackoverflow_limit: 2
           extras_css: |
                 title {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h1 {
-                  color: #E25577;
+                  color: #66CCFF;
                 }
                 h2 {
-                  color: #39C5BB;
+                  color: #E25577;
                 }
                 h3 {
                   color: #FFA500;
                 }
                 svg {
-                 color: #FFC0CB;
+                 color: #39C5BB;
                 }
                 footer {
                  color: #FFC0CB;
