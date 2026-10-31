@@ -9,8 +9,9 @@
        不会送进 camo 代理，浏览器只能直连——而该域名在大陆常年被 DNS 污染，图片会全灭。
      · jsDelivr 是第三方域名，GitHub 渲染时会经 camo（camo.githubusercontent.com）代取，
        浏览器全程不碰 raw，所以稳定。
-     代价：jsDelivr 对 @main 有约 12h 边缘缓存，camo 同样缓存 12h，SVG 每日更新会晚几小时生效；
-     急着刷新可访问 purge 接口，需要立刻看到新图时给 URL 尾部加 ?v=日期 破缓存：
+     代价：jsDelivr 对 @main 有约 12h 边缘缓存，camo 同样缓存 12h，SVG 每日更新会晚几小时生效。
+     所以下面所有卡片 URL 都带同一个缓存戳 ?v=20261031c；想立刻看到重新生成的图就把这个
+     版本号 bump 一下（c→d…），必要时再 purge：
          https://purge.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/<path>
 
   2) 卡片宽度
@@ -44,86 +45,84 @@
 <h3 align="center">📊 数据概览 · Stats</h3>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/base.svg" alt="GitHub 个人概览"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/base.svg?v=20261031c" alt="GitHub 个人概览"></a>
   <a href="https://www.yuzu-soft.com/"><img width="360" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/ciallo.gif" alt="Ciallo"></a>
 </p>
 
 <h3 align="center">🧠 语言 · Languages</h3>
 
 <!--
-  languages.indepth.svg 走 metrics 的 languages 插件（plugin_languages + indepth）。
-  它按「本人提交过的 commit」逐条 clone + linguist 分析，仓库一大就会超时并在卡片底部
-  显示 "Reached maximum execution time ... partial results"。
-  update.yml 里已用 plugin_languages_skipped 排除 Tenshi / Elaina / Hisou-Tenshi.github.io /
-  本仓库这 4 个大仓库，并把两级超时放宽到 45 / 15 分钟，现在可以完整跑完。
-  标题里的 "N Languages" 是各仓库语言并集的去重数（含被跳过的仓库和 0 字节语言），
-  仍可能大于下方实际列出的数量——这是上游行为，不是配置错误。
-
-  ⚠️ 该卡片的 URL 带 ?v=20261031 缓存戳：换图/重建缓存后把它改成当天日期，
-  否则 jsDelivr 与 camo 的 12h 缓存会继续显示旧图。
+  languages.svg 走 metrics 的 languages 插件「默认算法」（不开 indepth）：
+  直接汇总各仓库 languages.edges 的字节占比，等于「全部仓库的语言占比」，
+  秒级完成、不会超时。之前开 indepth 时，Tenshi / Hisou-Tenshi.github.io 等
+  巨型仓库会吃光分析预算，卡片长期带 "Reached maximum execution time ...
+  partial results" 警告，所以 2026-10-31 改回默认算法。
+  标题里的 "N Languages" 是各仓库语言并集的去重数（含 0 字节语言），
+  可能略多于列表条数（limit 8），属上游行为，不是配置错误。
 -->
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/languages.indepth.svg?v=20261031" alt="最常用的语言"></a>
-  <a href="https://github.com/stats-organization/github-stats-extended"><img width="400" src="https://github-stats-extended.vercel.app/api/top-langs?username=Hisou-Tenshi&layout=compact&title_color=39c5bb&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500" alt="Top languages"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/languages.svg?v=20261031c" alt="最常用的语言"></a>
+  <a href="https://github.com/stats-organization/github-stats-extended"><img width="400" src="https://github-stats-extended.vercel.app/api/top-langs?username=Hisou-Tenshi&layout=compact&title_color=E25577&hide=jupyter%20notebook,makefile&langs_count=8&size_weight=0.1&count_weight=0.9&card_width=500" alt="Top languages"></a>
 </p>
 
 <!--
-  右图是第三方托管服务（github-stats-extended，github-readme-stats 的官方继任项目），
-  统计口径是各仓库语言字节占比，与左侧 metrics 的「按提交行数」不同，数字对不上属正常。
+  右图是第三方托管服务（github-stats-extended，github-readme-stats 的官方继任项目）。
+  它和左边 metrics 卡现在都按各仓库语言字节占比统计，口径接近；差别是它会按仓库数量
+  加权（size_weight=0.1&count_weight=0.9），所以数字略有出入属正常。
   若该实例挂掉，可换源或在 SELF-HOSTING.md §5 里找自建方案。
 -->
 
 <h3 align="center">🎮 习惯与生活 · Habits &amp; Life</h3>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.charts.svg" alt="编程习惯图表"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/steam.full.svg" alt="Steam 游戏记录"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.charts.svg?v=20261031c" alt="编程习惯图表"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/steam.full.svg?v=20261031c" alt="Steam 游戏记录"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.facts.svg" alt="编程习惯文字结论"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/youtube.music.svg" alt="最近在听的音乐"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/habits.facts.svg?v=20261031c" alt="编程习惯文字结论"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/youtube.music.svg?v=20261031c" alt="最近在听的音乐"></a>
 </p>
 
 <h3 align="center">📅 贡献活动 · Activity</h3>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/isocalendar.fullyear.svg" alt="全年贡献"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/calendar.full.svg" alt="贡献日历"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/isocalendar.fullyear.svg?v=20261031c" alt="全年贡献"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/calendar.full.svg?v=20261031c" alt="贡献日历"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/followup.indepth.svg" alt="Issue 与 PR 状态"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/activity.svg" alt="最近活动"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/followup.indepth.svg?v=20261031c" alt="Issue 与 PR 状态"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/activity.svg?v=20261031c" alt="最近活动"></a>
 </p>
 
 <h3 align="center">🧩 社区与成就 · Community &amp; Achievements</h3>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stackoverflow.svg" alt="Stack Overflow 数据"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/achievements.compact.svg" alt="GitHub 成就"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stackoverflow.svg?v=20261031c" alt="Stack Overflow 数据"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/achievements.compact.svg?v=20261031c" alt="GitHub 成就"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/reactions.svg" alt="评论表情反应"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/people.followers.svg" alt="关注者"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/reactions.svg?v=20261031c" alt="评论表情反应"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/people.followers.svg?v=20261031c" alt="关注者"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/repositories.pinned.svg" alt="置顶仓库"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/licenses.overview.svg" alt="许可证概览"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/repositories.pinned.svg?v=20261031c" alt="置顶仓库"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/licenses.overview.svg?v=20261031c" alt="许可证概览"></a>
 </p>
 
 <h3 align="center">⭐ 星标 · Stars</h3>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stars.svg" alt="最近点星"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stargazers.chartist.svg" alt="Star 趋势"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stars.svg?v=20261031c" alt="最近点星"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/stargazers.chartist.svg?v=20261031c" alt="Star 趋势"></a>
 </p>
 
 <h3 align="center">🎨 カラーコード · Colors</h3>
 
-<p align="center"><sub>Vocaloid 主题色 · 同时也是上方 metrics 卡片标题与图表的配色来源</sub></p>
+<p align="center"><sub>Vocaloid 主题色 · 同时用于上方卡片：h1 天依蓝 · h2 重音红 · h3 橙 · 正文初音绿</sub></p>
 
 <table align="center">
   <thead>
@@ -131,6 +130,7 @@
   </thead>
   <tbody>
     <tr><td align="center">初音ミク</td><td align="center">#39C5BB</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/39C5BB.png" alt="#39C5BB" height="15"></td></tr>
+    <tr><td align="center">洛天依</td><td align="center">#66CCFF</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/66CCFF.png" alt="#66CCFF" height="15"></td></tr>
     <tr><td align="center">重音テト</td><td align="center">#E25577</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/E25577.png" alt="#E25577" height="15"></td></tr>
     <tr><td align="center">鏡音リン</td><td align="center">#FFA500</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFA500.png" alt="#FFA500" height="15"></td></tr>
     <tr><td align="center">鏡音レン</td><td align="center">#FFE211</td><td align="center"><img src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/colors/FFE211.png" alt="#FFE211" height="15"></td></tr>
