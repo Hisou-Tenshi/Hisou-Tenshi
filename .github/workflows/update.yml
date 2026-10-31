@@ -62,7 +62,8 @@
 #
 #  · 账号已由 Shameimaru-Ayaya 改名为 Hisou-Tenshi，卡片里的 username 同步更新。
 #
-#  · config_timezone 原来混用 Asia/Tokyo 和 Europe/Paris，已统一为 Asia/Tokyo。
+#  · config_timezone 原来混用 Asia/Tokyo 和 Europe/Paris，已统一为 Asia/Tokyo；
+#    只有基础卡（base）单独用 Asia/Pyongyang（UTC+9，与东京同时区，仅时区标识符不同）。
 #
 # =============================================================================
 
@@ -103,7 +104,7 @@ jobs:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
           # Options
-          config_timezone: Asia/Tokyo
+          config_timezone: Asia/Pyongyang
           # base: "header, activity, community, repositories"
           # 此插件为文档中的 🧮 Repositories traffic
           plugin_traffic: yes
