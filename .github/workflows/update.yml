@@ -221,20 +221,25 @@ jobs:
           plugin_isocalendar: yes
           # 设置成显示整年
           plugin_isocalendar_duration: full-year
-          # 这张卡保持 GitHub 原版配色，不套用下面的卡片主题色（h1/h2/正文/页脚）。
-          # GitHub 在万圣节 / 冬季会把格子换成彩色（#ffee4a / #0a3069 等），
-          # 那些 hex 是写死在 fill 属性里的，用属性选择器映射回 GitHub 原版绿色。
           extras_css: |
-                /* 万圣节配色 → GitHub 原版绿 */
-                [fill="#ffee4a"], [fill="#FFEE4A"] { fill: #9be9a8; }
-                [fill="#ffc501"], [fill="#FFC501"] { fill: #40c463; }
-                [fill="#fe9600"], [fill="#FE9600"] { fill: #30a14e; }
-                [fill="#03001c"], [fill="#03001C"] { fill: #216e39; }
-                /* 冬季配色 → GitHub 原版绿 */
-                [fill="#0a3069"], [fill="#0A3069"] { fill: #9be9a8; }
-                [fill="#0969da"], [fill="#0969DA"] { fill: #40c463; }
-                [fill="#54aeff"], [fill="#54AEFF"] { fill: #30a14e; }
-                [fill="#b6e3ff"], [fill="#B6E3FF"] { fill: #216e39; }
+                title {
+                  color: #66CCFF;
+                }
+                h1 {
+                  color: #66CCFF;
+                }
+                h2 {
+                  color: #E25577;
+                }
+                h3 {
+                  color: #FFA500;
+                }
+                svg {
+                 color: #39C5BB;
+                }
+                footer {
+                 color: #FFC0CB;
+                }
           retries: 3
           retries_delay: 300
           retries_output_action: 5
@@ -251,20 +256,25 @@ jobs:
           base: ""
           plugin_calendar: yes
           plugin_calendar_limit: 0
-          # 这张卡保持 GitHub 原版配色，不套用下面的卡片主题色（h1/h2/正文/页脚）。
-          # GitHub 在万圣节 / 冬季会把格子换成彩色（#ffee4a / #0a3069 等），
-          # 那些 hex 是写死在 fill 属性里的，用属性选择器映射回 GitHub 原版绿色。
           extras_css: |
-                /* 万圣节配色 → GitHub 原版绿 */
-                [fill="#ffee4a"], [fill="#FFEE4A"] { fill: #9be9a8; }
-                [fill="#ffc501"], [fill="#FFC501"] { fill: #40c463; }
-                [fill="#fe9600"], [fill="#FE9600"] { fill: #30a14e; }
-                [fill="#03001c"], [fill="#03001C"] { fill: #216e39; }
-                /* 冬季配色 → GitHub 原版绿 */
-                [fill="#0a3069"], [fill="#0A3069"] { fill: #9be9a8; }
-                [fill="#0969da"], [fill="#0969DA"] { fill: #40c463; }
-                [fill="#54aeff"], [fill="#54AEFF"] { fill: #30a14e; }
-                [fill="#b6e3ff"], [fill="#B6E3FF"] { fill: #216e39; }
+                title {
+                  color: #66CCFF;
+                }
+                h1 {
+                  color: #66CCFF;
+                }
+                h2 {
+                  color: #E25577;
+                }
+                h3 {
+                  color: #FFA500;
+                }
+                svg {
+                 color: #39C5BB;
+                }
+                footer {
+                 color: #FFC0CB;
+                }
           retries: 3
           retries_delay: 300
           retries_output_action: 5

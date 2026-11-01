@@ -10,11 +10,10 @@
      · jsDelivr 是第三方域名，GitHub 渲染时会经 camo（camo.githubusercontent.com）代取，
        浏览器全程不碰 raw，所以稳定。
      代价：jsDelivr 对 @main 有约 12h 边缘缓存，camo 同样缓存 12h，SVG 每日更新会晚几小时生效。
-     所以下面所有卡片 URL 都带缓存戳（主版本 ?v=20261031d）；想立刻看到重新生成的图就把这个
+     所以下面所有卡片 URL 都带同一个缓存戳 ?v=20261031d；想立刻看到重新生成的图就把这个
      版本号 bump 一下（d→e…），必要时再 purge：
          https://purge.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/<path>
     （2026-10-31 踩坑：仓库里的 SVG 已是新配色，camo 却还在供旧副本；bump 版本号 + purge 后恢复。）
-    （2026-11-01 把贡献日历两张卡单独 bump 到 ?v=20261101a：它们的配色规则改过，需要独立刷新。）
 
   2) 卡片宽度
      两列卡片统一 width="400"。原因是主页与仓库页的 README 容器宽度不同
@@ -86,12 +85,11 @@
   <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/youtube.music.svg?v=20261031d" alt="最近在听的音乐"></a>
 </p>
 
-<!-- 这两张贡献日历卡故意不套用卡片主题色：保持 GitHub 原版绿色（见 update.yml 里两个 calendar step 的 extras_css）。 -->
 <h3 align="center">📅 贡献活动 · Activity</h3>
 
 <p align="center">
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/isocalendar.fullyear.svg?v=20261101a" alt="全年贡献"></a>
-  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/calendar.full.svg?v=20261101a" alt="贡献日历"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/isocalendar.fullyear.svg?v=20261031d" alt="全年贡献"></a>
+  <a href="https://github.com/lowlighter/metrics"><img width="400" src="https://cdn.jsdelivr.net/gh/Hisou-Tenshi/Hisou-Tenshi@main/github-metrics/calendar.full.svg?v=20261031d" alt="贡献日历"></a>
 </p>
 
 <p align="center">
