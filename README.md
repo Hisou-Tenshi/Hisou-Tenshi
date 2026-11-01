@@ -150,3 +150,5 @@
 <sub>Powered by <a href="https://github.com/gh-metrics/metrics">gh-metrics/metrics</a> · 维护与排障见 <a href="SELF-HOSTING.md">SELF-HOSTING.md</a></sub>
 
 </div>
+
+<p align="center"><sub>Copyright © 2026 緋想天子 (Hisou-Tenshi) · 最后更新 2026-11</sub></p>
